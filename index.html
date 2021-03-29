@@ -397,9 +397,9 @@
 
 	<!--橫向bar-horizontal-bar -->
 	<script>
-		var ctx2 = document.getElementById('horizontal-bar').getContext('2d');
+		var ctx5 = document.getElementById('horizontal-bar').getContext('2d');
 		// var color = Chart.helpers.color;
-		var myChart = new Chart(ctx2, {
+		var myChart = new Chart(ctx5, {
 			type: 'horizontalBar',
 			data: {
 				labels: ['淹水感測器', '水位站', '閘門', '電力'],
@@ -458,8 +458,8 @@
 			}]
 		};
 
-		var ctx3 = document.getElementById('bar-chart').getContext('2d');
-		window.myBar3 = new Chart(ctx3, {
+		var ctx6 = document.getElementById('bar-chart').getContext('2d');
+		window.myBar3 = new Chart(ctx6, {
 			type: 'bar',
 			data: barChartData3,
 			options: {
