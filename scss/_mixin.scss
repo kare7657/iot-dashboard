@@ -1,4 +1,9 @@
 // RWD
+@mixin web-XL {
+    @media (max-width: $web-XL) {
+        @content;
+    }
+}
 @mixin web-L {
     @media (max-width: $web-L) {
         @content;

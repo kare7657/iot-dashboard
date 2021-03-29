@@ -59,21 +59,21 @@ body {
                 padding: $padding-XXS;
                 .num {
                     width: 100%;
-                    &:not(:last-child){
-                        margin-bottom: $margin-S*1.5;
+                    &:not(:last-child) {
+                        margin-bottom: $margin-S * 1.5;
                     }
                     @include web-S {
                         width: 25%;
                         padding: 0 10px;
                         margin: $margin-S/1.5 0;
-                        &:not(:last-child){
+                        &:not(:last-child) {
                             margin-bottom: 0;
                         }
                     }
-                    @include mobile-L{
+                    @include mobile-L {
                         width: 100%;
                         margin: 0;
-                        &:not(:last-child){
+                        &:not(:last-child) {
                             margin-bottom: $margin-S;
                         }
                     }
@@ -142,21 +142,25 @@ body {
             .knob-gp {
                 height: 100%;
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
                 flex-direction: row;
-                @include web-S {
-                    justify-content: center;
-                }
-                @include mobile-L {
+                @include web-XL{
                     justify-content: space-around;
+                }
+                @include web-S{
+                    justify-content: center;
                 }
                 .knob {
                     display: block;
                     justify-content: center;
+                    margin: $margin-XS $margin-XS * 1.5;
+                    @include web-XL {
+                        margin: 0;
+                    }
                     @include web-S {
-                        margin: $margin-XS;
+                        margin: $margin-XS  $margin-XS * 1.5;
                     }
                     p {
                         margin-bottom: $margin-XS;
