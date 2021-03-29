@@ -263,7 +263,6 @@
 						color(window.chartColors.green).alpha(0.8).rgbString(),
 						color(window.chartColors.orange).alpha(0.8).rgbString(),
 						color(window.chartColors.purple).alpha(0.8).rgbString(),
-						// color(window.chartColors.grey).alpha(0.8).rgbString(),
 					],
 					label: 'Dataset 1'
 				}],
@@ -312,7 +311,6 @@
 						color(window.chartColors.green).alpha(0.8).rgbString(),
 						color(window.chartColors.orange).alpha(0.8).rgbString(),
 						color(window.chartColors.purple).alpha(0.8).rgbString(),
-						// color(window.chartColors.grey).alpha(0.8).rgbString(),
 					],
 					label: 'Dataset 1'
 				}],
@@ -361,7 +359,6 @@
 						color(window.chartColors.green).alpha(0.8).rgbString(),
 						color(window.chartColors.orange).alpha(0.8).rgbString(),
 						color(window.chartColors.purple).alpha(0.8).rgbString(),
-						// color(window.chartColors.grey).alpha(0.8).rgbString(),
 					],
 					label: 'Dataset 1'
 				}],
@@ -398,7 +395,7 @@
 	<!--橫向bar-horizontal-bar -->
 	<script>
 		var ctx5 = document.getElementById('horizontal-bar').getContext('2d');
-		// var color = Chart.helpers.color;
+		var color = Chart.helpers.color;
 		var myChart = new Chart(ctx5, {
 			type: 'horizontalBar',
 			data: {
@@ -440,6 +437,7 @@
 
 	<!-- 直向bar-chart -->
 	<script>
+		var color = Chart.helpers.color;
 		var barChartData3 = {
 			labels: ['淹水感測器', '水位站'],
 			datasets: [{
@@ -473,33 +471,6 @@
 
 			}
 		});
-	</script>
-
-	<!-- JQ 重置plugin -->
-	<script>
-		; (function ($, window, document, undefined) {
-			var pluginName = 'reset';
-
-			function reset(element) {
-				this.element = element;
-				this._name = pluginName;
-				this.init();
-			}
-
-			reset.prototype = {
-				init: function () {
-					this.element.reset();
-				}
-			}
-
-			$.fn[pluginName] = function () {
-				return this.each(function () {
-					if (!$.data(this, 'plugin_' + pluginName)) {
-						$.data(this, 'plugin_' + pluginName, new reset(this));
-					}
-				});
-			}
-		})(jQuery);
 	</script>
 
 
