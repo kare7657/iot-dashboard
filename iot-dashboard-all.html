@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-hant">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iot-dashboard-all</title>
+	<link rel="stylesheet" href="scss/bootstrap.css">
+	<link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="card col-12 col-sm-12 col-xl-3">
+			<div class="total-num-gp">
+				<div class="num">
+					<h4 class="num-title">
+						機關數量
+					</h4>
+					<div class="num-content">
+						40
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						監測站數量
+					</h4>
+					<div class="num-content">
+						7,149
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						設備數量
+					</h4>
+					<div class="num-content">
+						4,828
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						物理量數量
+					</h4>
+					<div class="num-content">
+						27,244
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-12 col-xl-9 chart-gp">
+			<div class="chart-gp">
+				<div class=" doughnut">
+					<h3 class="text-center">機關數量</h3>
+					<canvas class="doughunt-canvas" id="doughunt-canvas"></canvas>
+				</div>
+				<div class=" doughnut">
+					<h3 class="text-center">設備數量</h3>
+					<canvas class="doughunt-canvas" id="doughunt-canvas2"></canvas>
+				</div>
+				<div class=" doughnut">
+					<h3 class="text-center">監測站數量</h3>
+					<canvas class="doughunt-canvas" id="doughunt-canvas3"></canvas>
+				</div>
+				<div class=" doughnut">
+					<h3 class="text-center">物理量數量</h3>
+					<canvas class="doughunt-canvas" id="doughunt-canvas4"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="card col-12 col-sm-12 col-xl-4">
+			<h3 class="text-center">資料品質</h3>
+			<select class="">
+				<option>option 1</option>
+				<option>option 2</option>
+				<option>option 3</option>
+				<option>option 4</option>
+				<option>option 5</option>
+			</select>
+			<div class="knob-gp">
+				<div class="knob">
+					<p>監測站</p>
+					<input type="text" value="20" class="dial" id="dial">
+				</div>
+				<div class="knob">
+					<p>設備</p>
+					<input type="text" value="62" class="dial" id="dial2">
+				</div>
+				<div class="knob">
+					<p>物理量</p>
+					<input type="text" value="80" class="dial" id="dial3">
+				</div>
+				<div class="knob">
+					<p>資料中斷</p>
+					<input type="text" value="35" class="dial" id="dial4">
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-4">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">物理量分類統計(top N)</h3>
+					<canvas id="horizontal-bar" class="chart-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-4">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">淹水感測器,水位站 數量統計</h3>
+					<canvas id="bar-chart" class="chart-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- chartjs -->
+	<script src="js/chart.min.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- jQuery Knob -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.knob.min.js"></script>
+
+	<!-- 資料品質 jQuery Knob -->
+	<script>
+		if (jQuery(window).width() < 1280) {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 110,
+				'height': 110,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 110,
+				'height': 110,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 110,
+				'height': 110,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 110,
+				'height': 110,
+				'readOnly': true,
+			});
+		}
+		else {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+		}
+	</script>
+
+	<!-- doughunt-chart -->
+	<script>
+		var randomScalingFactor = function () {
+			return Math.round(Math.random() * 100);
+		};
+		var color = Chart.helpers.color;
+
+
+		window.onload = function () {
+			var ctx = document.getElementById('doughunt-canvas').getContext('2d');
+			window.myDoughnut = new Chart(ctx, config);
+			var ctx2 = document.getElementById('doughunt-canvas2').getContext('2d');
+			window.myDoughnut = new Chart(ctx2, config2);
+			var ctx3 = document.getElementById('doughunt-canvas3').getContext('2d');
+			window.myDoughnut = new Chart(ctx3, config3);
+			var ctx4 = document.getElementById('doughunt-canvas4').getContext('2d');
+			window.myDoughnut = new Chart(ctx4, config4);
+		};
+
+		var config = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						20,
+						30,
+						20,
+						10,
+						20
+					],
+					backgroundColor: [
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.yellow).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.orange).alpha(0.8).rgbString(),
+						color(window.chartColors.purple).alpha(0.8).rgbString(),
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'水利署',
+					'縣市政府',
+					'農田水利署',
+					'營建署',
+					'其他單位'
+				]
+			},
+
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Doughnut Chart'
+					},
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		};
+
+		var config2 = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						10,
+						20,
+						40,
+						10,
+						20
+					],
+					backgroundColor: [
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.yellow).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.orange).alpha(0.8).rgbString(),
+						color(window.chartColors.purple).alpha(0.8).rgbString(),
+						// color(window.chartColors.grey).alpha(0.8).rgbString(),
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'水利署',
+					'縣市政府',
+					'農田水利署',
+					'營建署',
+					'其他單位'
+				]
+			},
+
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Doughnut Chart'
+					},
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		};
+
+		var config3 = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						30,
+						20,
+						30,
+						10,
+						10
+					],
+					backgroundColor: [
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.yellow).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.orange).alpha(0.8).rgbString(),
+						color(window.chartColors.purple).alpha(0.8).rgbString(),
+						// color(window.chartColors.grey).alpha(0.8).rgbString(),
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'水利署',
+					'縣市政府',
+					'農田水利署',
+					'營建署',
+					'其他單位'
+				]
+			},
+
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Doughnut Chart'
+					},
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		};
+
+		var config4 = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						10,
+						10,
+						30,
+						25,
+						25
+					],
+					backgroundColor: [
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.yellow).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.orange).alpha(0.8).rgbString(),
+						color(window.chartColors.purple).alpha(0.8).rgbString(),
+						// color(window.chartColors.grey).alpha(0.8).rgbString(),
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'水利署',
+					'縣市政府',
+					'農田水利署',
+					'營建署',
+					'其他單位'
+				]
+			},
+
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Doughnut Chart'
+					},
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		};
+
+	</script>
+
+	<!--橫向bar-horizontal-bar -->
+	<script>
+		var ctx2 = document.getElementById('horizontal-bar').getContext('2d');
+		var color = Chart.helpers.color;
+		var myChart = new Chart(ctx2, {
+			type: 'horizontalBar',
+			data: {
+				labels: ['淹水感測器', '水位站', '閘門', '電力'],
+				datasets: [{
+					data: [12, 19, 3, 10, 7, 6, 9],
+					backgroundColor: [
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+						color(window.chartColors.green).alpha(0.8).rgbString(),
+					],
+					borderColor: [
+						color(window.chartColors.green).alpha(1).rgbString(),
+						color(window.chartColors.green).alpha(1).rgbString(),
+						color(window.chartColors.green).alpha(1).rgbString(),
+						color(window.chartColors.green).alpha(1).rgbString(),
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				// 隱藏label
+				legend: {
+					display: false,
+				}
+			}
+		});
+	</script>
+
+	<!-- 直向bar-chart -->
+	<script>
+		var barChartData3 = {
+			labels: ['淹水感測器', '水位站'],
+			datasets: [{
+				label: '水利署',
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderColor: window.chartColors.blue,
+				borderWidth: 1,
+				data: [28, 48]
+			},
+			{
+				label: '縣市政府',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderColor: window.chartColors.yellow,
+				borderWidth: 1,
+				data: [65, 59]
+			}]
+		};
+
+		var ctx3 = document.getElementById('bar-chart').getContext('2d');
+		window.myBar3 = new Chart(ctx3, {
+			type: 'bar',
+			data: barChartData3,
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+				}
+
+			}
+		});
+	</script>
+
+	<!-- JQ 重置plugin -->
+	<script>
+		; (function ($, window, document, undefined) {
+			var pluginName = 'reset';
+
+			function reset(element) {
+				this.element = element;
+				this._name = pluginName;
+				this.init();
+			}
+
+			reset.prototype = {
+				init: function () {
+					this.element.reset();
+				}
+			}
+
+			$.fn[pluginName] = function () {
+				return this.each(function () {
+					if (!$.data(this, 'plugin_' + pluginName)) {
+						$.data(this, 'plugin_' + pluginName, new reset(this));
+					}
+				});
+			}
+		})(jQuery);
+	</script>
+
+
+</body>
+
+</html>

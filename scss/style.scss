@@ -1,0 +1,181 @@
+@import "./guideline";
+@import "./mixin";
+
+// 通用
+* {
+    @include all();
+}
+body.modal-open {
+    padding-right: 0px !important;
+    overflow-y: auto;
+}
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+body {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    background-color: $light-sky;
+    @include mobile-XS() {
+        font-size: 0.875rem;
+    }
+    // 導覽列
+    .minibar {
+        @include minibar();
+    }
+    .navbar {
+        @include navbar();
+    }
+    .back-top {
+        @include back-top();
+    }
+    .container {
+        max-width: 1920px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: $margin-XS/1.5;
+        @include mobile-L {
+            border: none;
+            padding: $margin-XS;
+        }
+        .card {
+            border: solid 6px $light-sky;
+            border-radius: 0;
+            padding: $padding-XS/1.5;
+            @include mobile-L {
+                border: none;
+                margin-bottom: $margin-XS;
+            }
+            .total-num-gp {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                flex-wrap: wrap;
+                padding: $padding-XXS;
+                .num {
+                    width: 100%;
+                    &:not(:last-child){
+                        margin-bottom: $margin-S*1.5;
+                    }
+                    @include web-S {
+                        width: 25%;
+                        padding: 0 10px;
+                        margin: $margin-S/1.5 0;
+                        &:not(:last-child){
+                            margin-bottom: 0;
+                        }
+                    }
+                    @include mobile-L{
+                        width: 100%;
+                        margin: 0;
+                        &:not(:last-child){
+                            margin-bottom: $margin-S;
+                        }
+                    }
+                    .num-title,
+                    .num-content {
+                        padding: $padding-XXS/1.5 $padding-XXS/2;
+                        margin-bottom: 0;
+                    }
+                    .num-title {
+                        background-color: $middle-blue;
+                        color: $title-W;
+                        // font-size: $size-h4;
+                        font-size: bold;
+                    }
+                    .num-content {
+                        background-color: $title-W;
+                        border: solid 1px $middle-blue;
+                        color: $gray-60;
+                    }
+                }
+            }
+            .chart-gp {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                @include mobile-L {
+                    flex-direction: column;
+                }
+                .doughnut {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    width: 50%;
+                    @include mobile-L {
+                        width: 100%;
+                    }
+
+                    .doughunt-canvas {
+                        max-height: 300px;
+                        margin-bottom: $margin-S;
+                        @include web-L {
+                            max-height: 280px;
+                        }
+                    }
+                }
+                .chart {
+                    .chart-canvas {
+                        height: 80%;
+                        max-height: 220px;
+                        width: 400px;
+                        @include pad {
+                            width: 300px;
+                            max-height: 180px;
+                        }
+                        @include mobile-L {
+                            max-width: none;
+                            width: 100%;
+                            max-height: 200px;
+                        }
+                        @include mobile-XS {
+                            max-height: 180px;
+                        }
+                    }
+                }
+            }
+            .knob-gp {
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                flex-direction: row;
+                @include web-S {
+                    justify-content: center;
+                }
+                @include mobile-L {
+                    justify-content: space-around;
+                }
+                .knob {
+                    display: block;
+                    justify-content: center;
+                    @include web-S {
+                        margin: $margin-XS;
+                    }
+                    p {
+                        margin-bottom: $margin-XS;
+                        text-align: center;
+                    }
+                }
+            }
+            select {
+                width: 30%;
+                @include web-S {
+                    width: 20%;
+                }
+                @include pad {
+                    margin-bottom: $margin-XS;
+                }
+                @include mobile-L {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
