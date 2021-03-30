@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-hant">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>機關群組儀表板</title>
+	<link rel="stylesheet" href="scss/bootstrap.4.2.css">
+	<link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="card col-12 col-sm-12 col-xl-6">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">各機關資料穩定度排行</h3>
+					<canvas id="horizontal-bar3" class="chart-canvas w50"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-12 col-xl-6">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">淹水感測器/水位站-數量統計</h3>
+					<canvas id="horizontal-bar4" class="chart-canvas w50"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="card col-12 col-sm-12 col-xl-4">
+			<h3 class="text-center">資料品質</h3>
+			<select class="">
+				<option>一河局</option>
+				<option>option 2</option>
+				<option>option 3</option>
+				<option>option 4</option>
+				<option>option 5</option>
+			</select>
+			<div class="knob-gp">
+				<div class="knob">
+					<p>監測站</p>
+					<input type="text" value="20" class="dial" id="dial">
+				</div>
+				<div class="knob">
+					<p>設備</p>
+					<input type="text" value="62" class="dial" id="dial2">
+				</div>
+				<div class="knob">
+					<p>物理量</p>
+					<input type="text" value="80" class="dial" id="dial3">
+				</div>
+				<div class="knob">
+					<p>資料中斷</p>
+					<input type="text" value="35" class="dial" id="dial4">
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-8">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">物理量分類統計(top N)</h3>
+					<canvas id="horizontal-bar" class="chart-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery Knob -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.knob.min.js"></script>
+	<!-- bootstrap -->
+	<script src="js/bootstrap.min.4.2.js"></script>
+	<script src="js/popper.min.js"></script>
+	<!-- chartjs -->
+	<script src="js/chart2.8.js"></script>
+	<script src="js/utils.js"></script>
+
+	<!-- 資料品質 jQuery Knob -->
+	<script>
+		// RWD
+		if (jQuery(window).width() < 568) {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+		}
+		else if (jQuery(window).width() < 1200) {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 120,
+				'height': 120,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 120,
+				'height': 120,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 120,
+				'height': 120,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 120,
+				'height': 120,
+				'readOnly': true,
+			});
+		}
+		else if (jQuery(window).width() < 1600) {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 80,
+				'height': 80,
+				'readOnly': true,
+			});
+		}
+		else {
+			$("#dial").knob({
+				"fgColor": "#37AFFF",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial2").knob({
+				"fgColor": "#FFB266",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial3").knob({
+				"fgColor": "#6FCDCD",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+			$("#dial4").knob({
+				"fgColor": "#AD85FF",
+				'width': 100,
+				'height': 100,
+				'readOnly': true,
+			});
+		}
+	</script>
+
+	<!--橫向bar-horizontal-bar -->
+	<script>
+		var ctx6 = document.getElementById('horizontal-bar3').getContext('2d');
+		var color = Chart.helpers.color;
+		var myChart = new Chart(ctx6, {
+			type: 'horizontalBar',
+			data: {
+				labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局'],
+				datasets: [{
+					data: [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+					// stack: 'Stack 0',
+					backgroundColor: [
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString(),
+						color(window.chartColors.blue).alpha(0.8).rgbString()
+					],
+					borderColor: [
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+						color(window.chartColors.blue).alpha(1).rgbString(),
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					xAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				// 隱藏label
+				legend: {
+					display: false,
+				}
+			}
+		});
+	</script>
+
+	<!-- 直向bar-chart -->
+	<script>
+		var color = Chart.helpers.color;
+		var barChartData3 = {
+			labels: ['淹水感測器', '水位站'],
+			datasets: [{
+				label: '水利署',
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderColor: window.chartColors.blue,
+				borderWidth: 1,
+				data: [28, 48]
+			},
+			{
+				label: '縣市政府',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderColor: window.chartColors.yellow,
+				borderWidth: 1,
+				data: [65, 59]
+			}]
+		};
+
+		var ctx6 = document.getElementById('bar-chart').getContext('2d');
+		window.myBar3 = new Chart(ctx6, {
+			type: 'bar',
+			data: barChartData3,
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+				}
+
+			}
+		});
+	</script>
+
+	<!-- 直向bar+line-chart -->
+	<script>
+		var chartData_linechart = {
+			labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局'],
+			datasets: [{
+				type: 'line',
+				label: '物理量詮釋資料符合%',
+				borderColor: window.chartColors.green,
+				borderWidth: 2,
+				fill: false,
+				data: [20, 40, 60, 40, 80, 50, 90, 30, 60, 80],
+			}, {
+				type: 'bar',
+				label: '淹水感測器',
+				backgroundColor: window.chartColors.blue,
+				borderColor: [color(window.chartColors.blue).alpha(1).rgbString()],
+				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70],
+				borderColor: 'white',
+				borderWidth: 2
+			}, {
+				type: 'bar',
+				label: '水位站',
+				backgroundColor: window.chartColors.yellow,
+				borderColor: [color(window.chartColors.yellow).alpha(1).rgbString()],
+				data: [30, 50, 60, 62, 90, 40, 95, 25, 75, 90],
+			}]
+
+		};
+		var ctx_linechart = document.getElementById('horizontal-bar4').getContext('2d');
+		window.myMixedChart = new Chart(ctx_linechart, {
+			type: 'bar',
+			data: chartData_linechart,
+			options: {
+				responsive: true,
+				tooltips: {
+					mode: 'index',
+					intersect: true
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+			}
+		});
+	</script>
+
+
+</body>
+
+</html>

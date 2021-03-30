@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>iot-dashboard-all</title>
+	<title>全系統儀表板</title>
 	<link rel="stylesheet" href="scss/bootstrap.4.2.css">
 	<link rel="stylesheet" href="scss/style.css">
 </head>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-12 col-sm-12 col-xl-9 chart-gp">
+		<div class="card col-12 col-sm-12 col-xl-9">
 			<div class="chart-gp">
 				<div class=" doughnut">
 					<h3 class="text-center">機關數量</h3>
@@ -71,7 +71,7 @@
 		<div class="card col-12 col-sm-12 col-xl-4">
 			<h3 class="text-center">資料品質</h3>
 			<select class="">
-				<option>option 1</option>
+				<option>水利署</option>
 				<option>option 2</option>
 				<option>option 3</option>
 				<option>option 4</option>
@@ -460,7 +460,7 @@
 				responsive: true,
 				maintainAspectRatio: false,
 				scales: {
-					yAxes: [{
+					xAxes: [{
 						ticks: {
 							beginAtZero: true
 						}
@@ -506,7 +506,15 @@
 					legend: {
 						position: 'top',
 					},
-				}
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							// 起始座標為0
+							beginAtZero: true
+						}
+					}]
+				},
 
 			}
 		});
