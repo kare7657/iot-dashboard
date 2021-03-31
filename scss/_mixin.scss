@@ -85,6 +85,14 @@
             color: $blue !important;
         }
     }
+    .more {
+        text-align: right;
+        a {
+            color: $middle-blue;
+            border-bottom: solid 1px;
+            padding-bottom: 1px;
+        }
+    }
     //font-awesome
     .fa,
     .fas,
