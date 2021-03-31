@@ -154,19 +154,16 @@ body {
                         width: 580px;
                         @include web-L {
                             width: 550px;
-                            max-height: 250px;
                         }
                         @include web-S {
                             width: 750px;
-                            max-height: 300px;
                         }
                         @include pad {
                             width: 650px;
-                            max-height: 300px;
                         }
                         @include mobile-L {
                             width: 300px;
-                            max-height: 200px;
+                            max-height: 250px;
                         }
                     }
                 }
