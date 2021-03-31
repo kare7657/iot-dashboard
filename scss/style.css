@@ -650,6 +650,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #a7e5ff;
+  overflow-x: hidden;
 }
 
 @media (max-width: 320px) {
