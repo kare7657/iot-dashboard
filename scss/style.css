@@ -1215,7 +1215,7 @@ body .container .card .chart-gp .chart .chart-canvas.w50 {
 @media (max-width: 568px) {
   body .container .card .chart-gp .chart .chart-canvas.w50 {
     width: 300px;
-    max-height: 280px;
+    max-height: 300px;
   }
 }
 
