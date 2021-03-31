@@ -150,13 +150,14 @@ body {
                     }
                     .chart-canvas.w50 {
                         height: 100%;
-                        max-height: 290px;
+                        max-height: 270px;
                         width: 580px;
                         @include web-L {
                             width: 550px;
                         }
                         @include web-S {
                             width: 750px;
+                            max-height: 300px;
                         }
                         @include pad {
                             width: 650px;
@@ -164,6 +165,25 @@ body {
                         @include mobile-L {
                             width: 300px;
                             max-height: 300px;
+                        }
+                    }
+                    .chart-canvas.w65 {
+                        height: 100%;
+                        max-height: 280px;
+                        width: 800px;
+                        @include web-L {
+                            width: 750px;
+                        }
+                        @include web-S {
+                            width: 750px;
+                            max-height: 320px;
+                        }
+                        @include pad {
+                            width: 650px;
+                            max-height: 350px;
+                        }
+                        @include mobile-L {
+                            width: 300px;
                         }
                     }
                 }

@@ -444,19 +444,8 @@
 				labels: ['淹水感測器', '水位站', '閘門', '電力'],
 				datasets: [{
 					data: [12, 19, 3, 10, 7, 6, 9],
-					backgroundColor: [
-						color(window.chartColors.green).alpha(0.8).rgbString(),
-						color(window.chartColors.green).alpha(0.8).rgbString(),
-						color(window.chartColors.green).alpha(0.8).rgbString(),
-						color(window.chartColors.green).alpha(0.8).rgbString(),
-					],
-					borderColor: [
-						color(window.chartColors.green).alpha(1).rgbString(),
-						color(window.chartColors.green).alpha(1).rgbString(),
-						color(window.chartColors.green).alpha(1).rgbString(),
-						color(window.chartColors.green).alpha(1).rgbString(),
-					],
-					borderWidth: 1
+					backgroundColor: color(window.chartColors.green).alpha(0.8).rgbString(),
+					borderWidth: 0
 				}]
 			},
 			options: {
@@ -467,6 +456,9 @@
 						ticks: {
 							beginAtZero: true
 						}
+					}],
+					yAxes: [{
+						barPercentage: 0.8
 					}]
 				},
 				// 隱藏label
@@ -485,15 +477,13 @@
 			datasets: [{
 				label: '水利署',
 				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
-				borderColor: window.chartColors.blue,
-				borderWidth: 1,
+				borderWidth: 0,
 				data: [28, 48]
 			},
 			{
 				label: '縣市政府',
 				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
-				borderColor: window.chartColors.yellow,
-				borderWidth: 1,
+				borderWidth: 0,
 				data: [65, 59]
 			}]
 		};
@@ -511,6 +501,9 @@
 					},
 				},
 				scales: {
+					xAxes: [{
+						barPercentage: 0.7
+					}],
 					yAxes: [{
 						ticks: {
 							// 起始座標為0

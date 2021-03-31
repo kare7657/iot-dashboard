@@ -60,7 +60,7 @@
 			<div class="chart-gp">
 				<div class=" chart">
 					<h3 class="text-center">物理量分類統計(top N)</h3>
-					<canvas id="horizontal-bar" class="chart-canvas"></canvas>
+					<canvas id="horizontal-bar5" class="chart-canvas w65" height='400'></canvas>
 				</div>
 			</div>
 		</div>
@@ -195,32 +195,8 @@
 				labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局'],
 				datasets: [{
 					data: [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],
-					// stack: 'Stack 0',
-					backgroundColor: [
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString(),
-						color(window.chartColors.blue).alpha(0.8).rgbString()
-					],
-					borderColor: [
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-						color(window.chartColors.blue).alpha(1).rgbString(),
-					],
-					borderWidth: 1
+					backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+					borderWidth: 0
 				}]
 			},
 			options: {
@@ -231,50 +207,15 @@
 						ticks: {
 							beginAtZero: true
 						}
+					}],
+					yAxes: [{
+						barPercentage: 0.7
 					}]
 				},
 				// 隱藏label
 				legend: {
 					display: false,
 				}
-			}
-		});
-	</script>
-
-	<!-- 直向bar-chart -->
-	<script>
-		var color = Chart.helpers.color;
-		var barChartData3 = {
-			labels: ['淹水感測器', '水位站'],
-			datasets: [{
-				label: '水利署',
-				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
-				borderColor: window.chartColors.blue,
-				borderWidth: 1,
-				data: [28, 48]
-			},
-			{
-				label: '縣市政府',
-				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
-				borderColor: window.chartColors.yellow,
-				borderWidth: 1,
-				data: [65, 59]
-			}]
-		};
-
-		var ctx6 = document.getElementById('bar-chart').getContext('2d');
-		window.myBar3 = new Chart(ctx6, {
-			type: 'bar',
-			data: barChartData3,
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				plugins: {
-					legend: {
-						position: 'top',
-					},
-				}
-
 			}
 		});
 	</script>
@@ -293,16 +234,14 @@
 			}, {
 				type: 'bar',
 				label: '淹水感測器',
-				backgroundColor: window.chartColors.blue,
-				borderColor: [color(window.chartColors.blue).alpha(1).rgbString()],
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderWidth: 0,
 				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70],
-				borderColor: 'white',
-				borderWidth: 2
 			}, {
 				type: 'bar',
 				label: '水位站',
-				backgroundColor: window.chartColors.yellow,
-				borderColor: [color(window.chartColors.yellow).alpha(1).rgbString()],
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderWidth: 0,
 				data: [30, 50, 60, 62, 90, 40, 95, 25, 75, 90],
 			}]
 
@@ -318,12 +257,73 @@
 					intersect: true
 				},
 				scales: {
+					xAxes: [{
+						barPercentage: 0.7
+					}],
 					yAxes: [{
 						ticks: {
 							beginAtZero: true
 						}
 					}]
 				},
+			}
+		});
+	</script>
+
+	<!-- 直向bar+line+stacked-chart -->
+	<script>
+		var barChartData = {
+			labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局'],
+			datasets: [{
+				label: '數據1',
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [80, 40, 60, 40, 80, 50, 90, 30, 60, 70],
+			}, {
+				label: '數據2',
+				backgroundColor: color(window.chartColors.orange).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70],
+			}, {
+				label: '數據3',
+				backgroundColor: color(window.chartColors.green).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 60, 62, 90, 40, 95, 25, 30, 30],
+			}, {
+				label: '數據4',
+				backgroundColor: color(window.chartColors.purple).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+
+				data: [20, 40, 50, 50, 10, 60, 40, 35, 35, 20],
+			}, {
+				label: '數據5',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 20, 42, 10, 40, 20, 25, 45, 36],
+			}]
+
+		};
+		var ctx7 = document.getElementById('horizontal-bar5').getContext('2d');
+		window.myBar = new Chart(ctx7, {
+			type: 'horizontalBar',
+			data: barChartData,
+			options: {
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				responsive: true,
+				scales: {
+					xAxes: [{
+						stacked: true,
+					}],
+					yAxes: [{
+						stacked: true,
+						barPercentage: 0.6
+					}]
+				}
 			}
 		});
 	</script>
