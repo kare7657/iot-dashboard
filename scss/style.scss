@@ -198,11 +198,12 @@ body {
             }
             .knob-gp {
                 height: 100%;
-                display: flex;
+                display: none;
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
                 flex-direction: row;
+                transition: 0.7s;
                 @include web-XL {
                     justify-content: space-around;
                 }
@@ -224,6 +225,9 @@ body {
                         text-align: center;
                     }
                 }
+            }
+            .active {
+                display: flex;
             }
             select {
                 width: 30%;

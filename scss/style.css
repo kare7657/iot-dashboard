@@ -1268,9 +1268,7 @@ body .container .card .chart-gp .chart .chart-canvas.w65 {
 
 body .container .card .knob-gp {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1283,6 +1281,8 @@ body .container .card .knob-gp {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
 }
 
 @media (max-width: 1600px) {
@@ -1323,6 +1323,12 @@ body .container .card .knob-gp .knob {
 body .container .card .knob-gp .knob p {
   margin-bottom: 10px;
   text-align: center;
+}
+
+body .container .card .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body .container .card select {
