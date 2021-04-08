@@ -5,55 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>全系統儀表板</title>
-	<!-- Font Awesome Icons -->
-	<link rel="stylesheet" href="fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" href="scss/bootstrap.4.2.css">
 	<link rel="stylesheet" href="scss/style.css">
 </head>
 
 <body>
-	 <!-- 導覽列 -->
-	 <div class="minibar">
-        <div class="container" >
-            <a href="#U" id="AU" title="右上方功能區塊" accesskey="U" tabindex="2">:::</a>
-            <div class="btn">
-                <ul>
-                    <li><a href="iot-dashboard-all.html">登入</a></li>
-                    <li>|</li>
-                    <li><a href="sign-up.html">註冊</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-    <nav class="navbar">
-        <div class="pc">
-            <div class="navbar-L logo">
-                <a href="index.html">
-                    <img src="img/iot-backEnd-logo.jpg" alt="logo">
-                </a>
-            </div>
-            <div class="navbar-R">
-
-            </div>
-        </div>
-        <div class="mobile">
-            <div class="menu">
-                <div class="fas fa-bars">
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="iot-dashboard-all.html">登入</a></li>
-                    <li><a href="sign-up.html">註冊</a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/iot-backEnd-logo.jpg" alt="logo">
-                </a>
-            </div>
-        </div>
-    </nav>
-	<div class="container index">
+	<div class="container">
 		<div class="card col-12 col-sm-12 col-xl-3">
 			<div class="total-num-gp">
 				<div class="num">
@@ -111,6 +68,73 @@
 			</div>
 		</div>
 
+		<div class="card col-12 col-sm-12 col-xl-4">
+			<h3 class="text-center">資料品質</h3>
+			<select class="" id="select1">
+				<option value="option1">水利署</option>
+				<option value="option2">option 2</option>
+				<option value="option3">option 3</option>
+				<option value="option4">option 4</option>
+				<option value="option5">option 5</option>
+			</select>
+			<!-- knob-gp1 -->
+			<div class="knob-gp active" id="knob-gp1">
+				<div class="knob">
+					<p>監測站</p>
+					<input type="text" value="20" class="dial" id="dial">
+				</div>
+				<div class="knob">
+					<p>設備</p>
+					<input type="text" value="62" class="dial" id="dial2">
+				</div>
+				<div class="knob">
+					<p>物理量</p>
+					<input type="text" value="80" class="dial" id="dial3">
+				</div>
+				<div class="knob">
+					<p>資料中斷</p>
+					<input type="text" value="35" class="dial" id="dial4">
+				</div>
+			</div>
+			<!-- knob-gp2 -->
+			<div class="knob-gp" id="knob-gp2">
+				<div class="knob">
+					<p>監測站</p>
+					<input type="text" value="85" class="dial" id="dial5">
+				</div>
+				<div class="knob">
+					<p>設備</p>
+					<input type="text" value="20" class="dial" id="dial6">
+				</div>
+				<div class="knob">
+					<p>物理量</p>
+					<input type="text" value="50" class="dial" id="dial7">
+				</div>
+				<div class="knob">
+					<p>資料中斷</p>
+					<input type="text" value="70" class="dial" id="dial8">
+				</div>
+			</div>
+			<div class="more">
+				<a href="iot-dashboard-organ-gp.html">檢視詳細資料</a>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-4">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">物理量分類統計(top N)</h3>
+					<canvas id="horizontal-bar" class="chart-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-4">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">淹水感測器,水位站 數量統計</h3>
+					<canvas id="bar-chart" class="chart-canvas"></canvas>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- jQuery Knob -->
@@ -122,20 +146,6 @@
 	<!-- chartjs -->
 	<script src="js/chart2.8.js"></script>
 	<script src="js/utils.js"></script>
-
-	<!-- mobile-menu -->
-    <script>
-        var fas = document.querySelector(".fas.fa-bars")
-        var navbar_nav = document.querySelector(".nav.navbar-nav")
-        var nav_item = document.querySelector(".nav-item.dropdown")
-        fas.onclick = function () {
-            if (navbar_nav.classList.contains("active-ul")) {
-                navbar_nav.classList.remove("active-ul")
-            } else {
-                navbar_nav.classList.add("active-ul")
-            }
-        }
-    </script>
 
 	<!-- 資料品質 jQuery Knob -->
 	<script>
