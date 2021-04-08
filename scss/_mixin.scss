@@ -740,6 +740,9 @@
             }
             a {
                 color: $title-W;
+                &:hover{
+                    color: $title-D !important;
+                }
             }
             .active-ul {
                 display: inline-block;

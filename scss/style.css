@@ -933,6 +933,10 @@ body .navbar .mobile .menu a {
   color: white;
 }
 
+body .navbar .mobile .menu a:hover {
+  color: #0d73ad !important;
+}
+
 body .navbar .mobile .menu .active-ul {
   display: inline-block;
   color: #2faae5;
