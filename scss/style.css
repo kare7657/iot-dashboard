@@ -690,13 +690,6 @@ body .minibar .container {
   }
 }
 
-body .minibar .container #AU {
-  font-size: 1.375rem;
-  color: #a7e5ff;
-  line-height: 40px;
-  margin-right: 20px;
-}
-
 body .minibar .container img {
   margin-right: 20px;
   padding: 5px 0;
