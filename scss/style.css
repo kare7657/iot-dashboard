@@ -653,6 +653,112 @@ body {
   position: relative;
 }
 
+body table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+}
+
+body table table,
+body table th,
+body table td {
+  border: 1px solid #a7e5ff;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+body table tr:nth-child(even) {
+  background-color: rgba(167, 229, 255, 0.1);
+}
+
+body table tr th {
+  background-color: rgba(167, 229, 255, 0.5);
+  text-align: center;
+}
+
+@media (max-width: 568px) {
+  body table tr th:nth-child(1) {
+    width: 25%;
+  }
+}
+
+body table tr td {
+  color: #595757;
+}
+
+@media (max-width: 568px) {
+  body table tr td {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: left;
+  }
+}
+
+body table tr .btn {
+  margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  body table tr .btn {
+    margin: 5px 6.66667px;
+  }
+}
+
+@media (max-width: 568px) {
+  body table tr .btn {
+    margin: 5px 6.66667px 5px 0 !important;
+  }
+}
+
+body table tr .btn-primary {
+  background-color: #2faae5;
+}
+
+@media (max-width: 568px) {
+  body .mb-separate thead {
+    display: none;
+  }
+}
+
+@media (max-width: 568px) {
+  body .mb-separate tr {
+    display: block;
+    margin-bottom: 25px !important;
+  }
+}
+
+@media (max-width: 568px) {
+  body .mb-separate tr:nth-child(even) {
+    background-color: transparent;
+  }
+}
+
+body .mb-separate tr th {
+  background-color: rgba(167, 229, 255, 0.5);
+  text-align: center;
+}
+
+@media (max-width: 568px) {
+  body .mb-separate tr td {
+    display: block;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: left;
+  }
+  body .mb-separate tr td::before {
+    width: 100%;
+    display: block;
+    content: attr(data-title);
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+    color: black;
+  }
+  body .mb-separate tr td:nth-child(odd) {
+    background-color: rgba(167, 229, 255, 0.1);
+  }
+}
+
 @media (max-width: 320px) {
   body {
     font-size: 0.875rem;
@@ -1031,6 +1137,7 @@ body .container {
 }
 
 body .container .card {
+  height: auto;
   border: solid 6px #a7e5ff;
   border-radius: 0;
   padding: 20px;
@@ -1369,6 +1476,13 @@ body .container .card select {
   body .container .card select {
     width: 100%;
   }
+}
+
+body .container .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 568px) {
