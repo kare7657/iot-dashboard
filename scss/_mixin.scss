@@ -117,9 +117,6 @@
     h6 {
         font-weight: bold;
     }
-    section {
-        width: 100%;
-    }
     hr {
         border-top: 1px solid $light-sky;
         margin: 0;
@@ -250,8 +247,7 @@
     }
     select {
         display: inline-block !important;
-        // width: unset;
-        height: 40px;
+        height: 30px !important;
         border-radius: 5px;
         border: solid 1px $gray-30;
         background: url("../img/chevron-down-solid.svg") no-repeat scroll transparent;

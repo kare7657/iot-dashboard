@@ -99,6 +99,17 @@ body {
                     }
                 }
             }
+            .tab {
+                margin-top: $margin-S;
+                select {
+                    @include web-S {
+                        width: 50%;
+                    }
+                    @include pad {
+                        width: 100%;
+                    }
+                }
+            }
             .chart-gp {
                 display: flex;
                 justify-content: center;
@@ -229,10 +240,11 @@ body {
                 }
             }
             .active {
-                display: flex;
+                display: flex !important;
             }
             select {
                 width: 30%;
+                margin-bottom: $margin-XS * 1.5;
                 @include web-S {
                     width: 20%;
                 }
@@ -243,10 +255,20 @@ body {
                     width: 100%;
                 }
             }
-            img{
+            .map {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                max-height: 540px;
+                @include web-S {
+                    max-height: 600px;
+                }
+                @include mobile-L {
+                    max-height: 250px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
         }
     }
