@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>單一機關儀表板</title>
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" href="scss/bootstrap.4.2.css">
 	<link rel="stylesheet" href="scss/style.css">
 </head>
@@ -117,36 +119,43 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="tab">
-						<select id="select2-1">
-							<option value="option2-1">當前物理量</option>
-							<option value="option2-2">7天趨勢圖</option>
-						</select>
-						<!-- knob-gp2-1 -->
-						<div class="knob-gp active" id="knob-gp2-1">
-							<div class="knob">
-								<p>物理量</p>
-								<input type="text" value="20" class="dial" id="dial2-1">
-							</div>
-							<div class="knob">
-								<p>電壓</p>
-								<input type="text" value="62" class="dial" id="dial2-2">
-							</div>
-							<div class="knob">
-								<p>淹水深度</p>
-								<input type="text" value="80" class="dial" id="dial2-3">
-							</div>
-							<div class="knob">
-								<p>物理量名</p>
-								<input type="text" value="35" class="dial" id="dial2-4">
-							</div>
+
+					<div class="explain">
+						<h3 class="text-center w-100 mb-0">當前物理量</h3>
+						<p class="date">2021-03-01 09:13:05</p>
+						<div class="text-gp">
+							<p class="title">物理量</p>
+							<p>123456<span class="unit">m&sup2;</span></p>
 						</div>
-						<!-- chart-gp2-2 -->
-						<div class="chart-gp d-none" id="chart-gp2-2">
-							<div class=" chart">
-								<canvas id="horizontal-bar4" class="chart-canvas w50" height='240'></canvas>
-							</div>
+						<div class="text-gp">
+							<p class="title">電壓</p>
+							<p>123456<span class="unit">v</span></p>
 						</div>
+						<div class="text-gp">
+							<p class="title">淹水深度</p>
+							<p>123456<span class="unit">m&sup2;</span></p>
+						</div>
+						<div class="text-gp">
+							<p class="title">物理量名</p>
+							<span class="state-btn true"><i class="fas fa-toggle-on"></i>true</span>
+						</div>
+						<div class="text-gp">
+							<p class="title">物理量名</p>
+							<span class="state-btn false"><i class="fas fa-toggle-on"></i>false</span>
+						</div>
+						<div class="text-gp">
+							<p class="title">物理量名</p>
+							<span class="state-btn true"><i class="fas fa-toggle-on"></i>true</span>
+						</div>
+						<div class="text-gp">
+							<p class="title">物理量名</p>
+							<span class="state-btn false"><i class="fas fa-toggle-on"></i>false</span>
+						</div>
+
+					</div>
+
+					<div class="more">
+						<a href="iot-dashboard-unity-7day.html">檢視詳細資料</a>
 					</div>
 				</div>
 			</div>
@@ -173,6 +182,7 @@
 			knob_gp1.classList.remove("active")
 			knob_gp2.classList.remove("active")
 		}
+
 		var selectmenu = document.getElementById("select1")
 		selectmenu.onchange = function () {
 			var chosenoption = this.options[this.selectedIndex]
@@ -182,26 +192,6 @@
 			} else if (chosenoption.value == "option2") {
 				clear_active()
 				knob_gp2.classList.toggle("active")
-			}
-		}
-
-		var knob_gp2_1 = document.querySelector("#knob-gp2-1")
-		var chart_gp2_2 = document.querySelector("#chart-gp2-2")
-
-		function clear_active2() {
-			knob_gp2_1.classList.remove("active")
-			chart_gp2_2.classList.remove("d-block")
-		}
-
-		var selectmenu2 = document.getElementById("select2-1")
-		selectmenu2.onchange = function () {
-			var chosenoption = this.options[this.selectedIndex]
-			if (chosenoption.value == "option2-1") {
-				clear_active2()
-				knob_gp2_1.classList.toggle("active")
-			} else if (chosenoption.value == "option2-2") {
-				clear_active2()
-				chart_gp2_2.classList.toggle("d-block")
 			}
 		}
 
@@ -254,31 +244,7 @@
 				'width': 100,
 				'height': 100,
 				'readOnly': true,
-			});
-			$("#dial2-1").knob({
-				"fgColor": "#37AFFF",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-2").knob({
-				"fgColor": "#FFB266",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-3").knob({
-				"fgColor": "#6FCDCD",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-4").knob({
-				"fgColor": "#AD85FF",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
+			})
 		}
 		else if (jQuery(window).width() < 1200) {
 			$("#dial").knob({
@@ -328,32 +294,7 @@
 				'width': 120,
 				'height': 120,
 				'readOnly': true,
-			});
-
-			$("#dial2-1").knob({
-				"fgColor": "#37AFFF",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-2").knob({
-				"fgColor": "#FFB266",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-3").knob({
-				"fgColor": "#6FCDCD",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
-			$("#dial2-4").knob({
-				"fgColor": "#AD85FF",
-				'width': 100,
-				'height': 100,
-				'readOnly': true,
-			});
+			})
 		}
 		else if (jQuery(window).width() < 1600) {
 			$("#dial").knob({
@@ -403,32 +344,7 @@
 				'width': 80,
 				'height': 80,
 				'readOnly': true,
-			});
-
-			$("#dial2-1").knob({
-				"fgColor": "#37AFFF",
-				'width': 80,
-				'height': 80,
-				'readOnly': true,
-			});
-			$("#dial2-2").knob({
-				"fgColor": "#FFB266",
-				'width': 80,
-				'height': 80,
-				'readOnly': true,
-			});
-			$("#dial2-3").knob({
-				"fgColor": "#6FCDCD",
-				'width': 80,
-				'height': 80,
-				'readOnly': true,
-			});
-			$("#dial2-4").knob({
-				"fgColor": "#AD85FF",
-				'width': 80,
-				'height': 80,
-				'readOnly': true,
-			});
+			})
 		}
 		else {
 			$("#dial").knob({
@@ -478,32 +394,7 @@
 				'width': 100,
 				'height': 100,
 				'readOnly': true,
-			});
-
-			$("#dial2-1").knob({
-				"fgColor": "#37AFFF",
-				'width': 120,
-				'height': 120,
-				'readOnly': true,
-			});
-			$("#dial2-2").knob({
-				"fgColor": "#FFB266",
-				'width': 120,
-				'height': 120,
-				'readOnly': true,
-			});
-			$("#dial2-3").knob({
-				"fgColor": "#6FCDCD",
-				'width': 120,
-				'height': 120,
-				'readOnly': true,
-			});
-			$("#dial2-4").knob({
-				"fgColor": "#AD85FF",
-				'width': 120,
-				'height': 120,
-				'readOnly': true,
-			});
+			})
 		}
 	</script>
 
@@ -525,6 +416,45 @@
 		window.myMixedChart = new Chart(ctx_linechart, {
 			type: 'bar',
 			data: chartData_linechart,
+			options: {
+				responsive: true,
+				tooltips: {
+					mode: 'index',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						barPercentage: 0.7
+					}],
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				// 隱藏label
+				legend: {
+					display: false,
+				}
+			}
+		});
+
+		var chartData_linechart2 = {
+			labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+			datasets: [{
+				type: 'line',
+				label: '物理量詮釋資料符合%',
+				borderColor: window.chartColors.green,
+				borderWidth: 2,
+				fill: false,
+				data: [60, 20, 40, 50, 30, 20, 40, 70, 50, 30],
+			}]
+
+		};
+		var ctx_linechart2 = document.getElementById('horizontal-bar5').getContext('2d');
+		window.myMixedChart2 = new Chart(ctx_linechart2, {
+			type: 'bar',
+			data: chartData_linechart2,
 			options: {
 				responsive: true,
 				tooltips: {

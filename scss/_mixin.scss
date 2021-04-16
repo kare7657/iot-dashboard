@@ -247,7 +247,7 @@
     }
     select {
         display: inline-block !important;
-        height: 30px !important;
+        min-height: 30px ;
         border-radius: 5px;
         border: solid 1px $gray-30;
         background: url("../img/chevron-down-solid.svg") no-repeat scroll transparent;
@@ -891,11 +891,6 @@
             th {
                 background-color: rgba($color: $light-sky, $alpha: 0.5);
                 text-align: center;
-                @include mobile-L {
-                    &:nth-child(1) {
-                        width: 25%;
-                    }
-                }
             }
             td {
                 color: $text;

@@ -233,7 +233,7 @@
 
 * select {
   display: inline-block !important;
-  height: 30px !important;
+  min-height: 30px;
   border-radius: 5px;
   border: solid 1px #ccc;
   background: url("../img/chevron-down-solid.svg") no-repeat scroll transparent;
@@ -670,12 +670,6 @@ body table tr:nth-child(even) {
 body table tr th {
   background-color: rgba(167, 229, 255, 0.5);
   text-align: center;
-}
-
-@media (max-width: 568px) {
-  body table tr th:nth-child(1) {
-    width: 25%;
-  }
 }
 
 body table tr td {
@@ -1403,6 +1397,46 @@ body .container .card .chart-gp .chart .chart-canvas.w65 {
   }
 }
 
+body .container .card .chart-gp .chart .chart-canvas.w35 {
+  height: 100%;
+  max-height: 250px;
+  width: 750px;
+}
+
+@media (max-width: 1600px) {
+  body .container .card .chart-gp .chart .chart-canvas.w35 {
+    width: 800px;
+    max-height: 270px;
+  }
+}
+
+@media (max-width: 1366px) {
+  body .container .card .chart-gp .chart .chart-canvas.w35 {
+    width: 750px;
+    max-height: 290px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .container .card .chart-gp .chart .chart-canvas.w35 {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container .card .chart-gp .chart .chart-canvas.w35 {
+    width: 650px;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .chart-gp .chart .chart-canvas.w35 {
+    width: 300px;
+    max-height: 220px;
+    margin-top: 10px;
+  }
+}
+
 body .container .card .knob-gp {
   height: 100%;
   display: none;
@@ -1493,7 +1527,7 @@ body .container .card select {
 
 body .container .card .map {
   width: 100%;
-  max-height: 540px;
+  max-height: 550px;
 }
 
 @media (max-width: 1024px) {
@@ -1513,6 +1547,97 @@ body .container .card .map img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+body .container .card .explain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 25px;
+}
+
+body .container .card .explain .date {
+  width: 100%;
+  text-align: right;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+body .container .card .explain .text-gp {
+  width: 49%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid #a7e5ff;
+  padding: 0 10px;
+}
+
+@media (max-width: 1024px) {
+  body .container .card .explain .text-gp {
+    width: 100%;
+  }
+  body .container .card .explain .text-gp:nth-child(odd) {
+    background-color: rgba(167, 229, 255, 0.1);
+  }
+}
+
+body .container .card .explain .text-gp .title {
+  margin: 0;
+  width: 40%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+@media (max-width: 568px) {
+  body .container .card .explain .text-gp .title {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
+body .container .card .explain .text-gp p {
+  width: 60%;
+}
+
+body .container .card .explain .text-gp p .unit {
+  margin-left: 5px;
+}
+
+body .container .card .explain .text-gp .state-btn {
+  width: 60%;
+  border-radius: 5px;
+  text-align: left;
+}
+
+body .container .card .explain .text-gp .state-btn i {
+  font-size: 1rem;
+  margin-right: 6.66667px;
+}
+
+body .container .card .explain .text-gp .true {
+  color: #22b573;
+}
+
+body .container .card .explain .text-gp .false {
+  color: #e8291c;
 }
 
 @media (max-width: 568px) {
