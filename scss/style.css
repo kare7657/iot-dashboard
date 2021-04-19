@@ -1321,7 +1321,7 @@ body .container .card .chart-gp .chart .chart-canvas {
 
 body .container .card .chart-gp .chart .chart-canvas.w50 {
   height: 100%;
-  max-height: 330px;
+  max-height: 300px;
   width: 680px;
 }
 
