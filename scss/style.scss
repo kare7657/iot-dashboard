@@ -181,7 +181,6 @@ body {
                         }
                         @include mobile-L {
                             width: 300px;
-                            max-height: 350px;
                         }
                     }
                     .chart-canvas.w65 {
@@ -345,7 +344,6 @@ body {
                         width: 60%;
                         border-radius: 5px;
                         text-align: left;
-
                         i {
                             font-size: $size-p;
                             margin-right: $margin-XS/1.5;
