@@ -1315,6 +1315,7 @@ body .container .card .chart-gp .chart .chart-canvas {
 
 @media (max-width: 320px) {
   body .container .card .chart-gp .chart .chart-canvas {
+    width: 250px;
     max-height: 180px;
   }
 }
@@ -1357,6 +1358,13 @@ body .container .card .chart-gp .chart .chart-canvas.w50 {
   }
 }
 
+@media (max-width: 320px) {
+  body .container .card .chart-gp .chart .chart-canvas.w50 {
+    width: 250px;
+    max-height: 270px;
+  }
+}
+
 body .container .card .chart-gp .chart .chart-canvas.w65 {
   height: 100%;
   max-height: 380px;
@@ -1393,6 +1401,13 @@ body .container .card .chart-gp .chart .chart-canvas.w65 {
   body .container .card .chart-gp .chart .chart-canvas.w65 {
     width: 300px;
     max-height: 400px;
+  }
+}
+
+@media (max-width: 320px) {
+  body .container .card .chart-gp .chart .chart-canvas.w65 {
+    width: 260px;
+    max-height: 350px;
   }
 }
 
