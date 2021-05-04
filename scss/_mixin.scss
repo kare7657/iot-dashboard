@@ -247,7 +247,7 @@
     }
     select {
         display: inline-block !important;
-        min-height: 30px ;
+        min-height: 30px;
         border-radius: 5px;
         border: solid 1px $gray-30;
         background: url("../img/chevron-down-solid.svg") no-repeat scroll transparent;
@@ -730,7 +730,7 @@
             }
             a {
                 color: $title-W;
-                &:hover{
+                &:hover {
                     color: $title-D !important;
                 }
             }
@@ -826,21 +826,27 @@
 }
 
 @mixin back-top() {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    line-height: 37px;
     z-index: 999;
     position: fixed;
-    right: 40px;
-    bottom: 30px;
-    background-color: $light-sky;
+    left: 30px;
+    top: 30px;
+    background-color: $blue;
     border-radius: 50%;
     font-size: $size-h4;
-    color: $dark-blue;
-    line-height: 55px;
+    color: $title-W;
     text-align: center;
-    @include web-S() {
+    transform: rotate(-90deg);
+    @include mobile-L() {
+        left: unset;
+        top: unset;
         right: 25px;
         bottom: 25px;
+        width: 44px;
+        height: 44px;
+        line-height: 40px;
     }
 }
 

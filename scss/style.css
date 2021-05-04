@@ -1080,24 +1080,31 @@ body .navbar .mobile .logo img {
 }
 
 body .back-top {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  line-height: 37px;
   z-index: 999;
   position: fixed;
-  right: 40px;
-  bottom: 30px;
-  background-color: #a7e5ff;
+  left: 30px;
+  top: 30px;
+  background-color: #2faae5;
   border-radius: 50%;
   font-size: 1.125rem;
-  color: #0d73ad;
-  line-height: 55px;
+  color: white;
   text-align: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 568px) {
   body .back-top {
+    left: unset;
+    top: unset;
     right: 25px;
     bottom: 25px;
+    width: 44px;
+    height: 44px;
+    line-height: 40px;
   }
 }
 
