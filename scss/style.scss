@@ -46,6 +46,12 @@ body {
             border: none;
             padding: $margin-XS;
         }
+        h2 {
+            margin-bottom: $margin-S;
+            @include mobile-L {
+                margin-bottom: $margin-XS;
+            }
+        }
         .card {
             height: auto;
             border: solid 6px $light-sky;

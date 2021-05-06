@@ -14,7 +14,7 @@
 
 * h2 {
   font-size: 1.5rem;
-  color: #0d73ad;
+  color: black;
   padding: 0;
   margin: 0;
   line-height: 3rem;
@@ -1130,6 +1130,16 @@ body .container {
   body .container {
     border: none;
     padding: 10px;
+  }
+}
+
+body .container h2 {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 568px) {
+  body .container h2 {
+    margin-bottom: 10px;
   }
 }
 
