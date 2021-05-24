@@ -275,7 +275,7 @@
         font-size: $size-h4;
         color: $title-W;
         font-weight: bold;
-        &:hover {
+        &:hover:not(.close) {
             background-color: $blue;
             transition-duration: 0.5s;
         }

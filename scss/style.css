@@ -265,7 +265,7 @@
   font-weight: bold;
 }
 
-* button:hover {
+* button:hover:not(.close) {
   background-color: #2faae5;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
