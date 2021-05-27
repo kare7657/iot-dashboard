@@ -62,40 +62,41 @@ body {
                 margin-bottom: $margin-XS;
             }
             .total-num-gp {
+                height: 100%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 text-align: center;
                 flex-wrap: wrap;
-                padding: $padding-XXS;
+                justify-content: center;
+                @include mobile-L {
+                    flex-direction: r;
+                }
                 .num {
                     width: 100%;
                     &:not(:last-child) {
-                        margin-bottom: $margin-S * 1.5;
+                        margin-bottom: $margin-XS * 1.5;
                     }
                     @include web-S {
                         width: 25%;
                         padding: 0 10px;
-                        margin: $margin-S/1.5 0;
                         &:not(:last-child) {
                             margin-bottom: 0;
                         }
                     }
                     @include mobile-L {
                         width: 100%;
-                        margin: 0;
                         &:not(:last-child) {
-                            margin-bottom: $margin-S;
+                            margin-bottom: $margin-XS * 1.5;
                         }
                     }
                     .num-title,
                     .num-content {
-                        padding: $padding-XXS/1.5 $padding-XXS/2;
+                        padding: $padding-XXS/2 $padding-XXS/2;
                         margin-bottom: 0;
                     }
                     .num-title {
                         background-color: $middle-blue;
                         color: $title-W;
-                        // font-size: $size-h4;
                         font-size: bold;
                     }
                     .num-content {
@@ -117,26 +118,33 @@ body {
                 }
             }
             .chart-gp {
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
+                align-items: center;
                 @include mobile-L {
                     flex-direction: column;
                 }
                 .doughnut {
                     display: flex;
                     flex-direction: column;
-                    flex-wrap: wrap;
-                    width: 50%;
+                    width: 25%;
                     @include mobile-L {
                         width: 100%;
+                        margin-bottom: $margin-S;
                     }
 
                     .doughunt-canvas {
-                        max-height: 300px;
-                        margin-bottom: $margin-S;
+                        max-height: 240px;
                         @include web-L {
-                            max-height: 280px;
+                            max-height: 160px;
+                        }
+                        @include pad {
+                            max-height: 140px;
+                        }
+                        @include mobile-L {
+                            max-height: 180px;
                         }
                     }
                 }
@@ -247,6 +255,47 @@ body {
                     }
                 }
             }
+            .remark {
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: $margin-S;
+                .text-gp {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    &:not(:last-child) {
+                        margin-right: $margin-S/1.5;
+                    }
+                    .square {
+                        width: 15px;
+                        height: 15px;
+                        line-height: 2;
+                        margin-right: $margin-XS/2;
+                    }
+                    .blue {
+                        background-color: #5eb5ef;
+                    }
+                    .yellow {
+                        background-color: #ffd778;
+                    }
+                    .green {
+                        background-color: #6fcdcd;
+                    }
+                    .orange {
+                        background-color: #ffb266;
+                    }
+                    .purple {
+                        background-color: #ad85ff;
+                    }
+                    p {
+                        color: $text;
+                        font-size: $size-p;
+                    }
+                }
+            }
             .knob-gp {
                 height: 100%;
                 display: none;
@@ -277,7 +326,7 @@ body {
                     }
                 }
             }
-            .active {
+            .active:not(a.active) {
                 display: flex !important;
             }
             select {
@@ -306,7 +355,6 @@ body {
                 flex-wrap: wrap;
                 justify-content: space-between;
                 margin-top: $margin-S;
-
                 .title {
                     margin: 0;
                     font-size: $size-p;
@@ -315,19 +363,51 @@ body {
                 }
                 table {
                     margin-bottom: $margin-XS;
-                    .state-btn {
-                        border-radius: 5px;
-                        text-align: left;
-                        i {
-                            font-size: $size-p;
-                            margin-right: $margin-XS/1.5;
-                        }
+                }
+            }
+            .filter {
+                margin-bottom: $margin-XS * 2;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                select {
+                    width: 17%;
+                    height: 32px;
+                    margin: 0;
+                    &:not(:last-child) {
+                        margin-right: $margin-XS;
                     }
-                    .true {
-                        color: $green;
+                    @include mobile-L{
+                        width: 100%;
+                        height: 40px;
+                        margin-bottom: $margin-XS*1.5;
                     }
-                    .false {
-                        color: $red;
+                }
+                input {
+                    width: 17%;
+                    height: unset;
+                    height: 32px;
+                    border-radius: 5px;
+                    border: solid 1px #ccc;
+                    margin: 0;
+                    margin-right: $margin-XS;
+                    @include mobile-L{
+                        width: 100%;
+                        height: 40px;
+                        margin-bottom: $margin-XS*1.5;
+                    }
+                }
+                button {
+                    height: 32px;
+                    padding: $padding-XXS/4 $padding-XXS;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-right: $margin-XS;
+                    font-size: $size-p;
+                    @include mobile-L{
+                        width: 100%;
+                        height: 38px;
+                        margin-bottom: $margin-XS*1.5;
                     }
                 }
             }

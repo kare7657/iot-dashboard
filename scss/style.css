@@ -257,7 +257,7 @@
 
 * button {
   padding: 5px 30px;
-  background-color: #0d73ad;
+  background-color: #2faae5;
   border-radius: 8px;
   border: none;
   font-size: 1.125rem;
@@ -266,9 +266,9 @@
 }
 
 * button:hover:not(.close) {
-  background-color: #2faae5;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+  opacity: 0.8;
 }
 
 * button[disabled] {
@@ -286,10 +286,10 @@
 * .button-outline {
   padding: 8px 30px;
   background-color: transparent;
-  -webkit-box-shadow: #0d73ad 0 0 0 1px;
-          box-shadow: #0d73ad 0 0 0 1px;
+  color: #2faae5;
+  -webkit-box-shadow: #2faae5 0 0 0 1px;
+          box-shadow: #2faae5 0 0 0 1px;
   font-size: 1.125rem;
-  color: #0d73ad;
   font-weight: bold;
 }
 
@@ -300,10 +300,8 @@
 }
 
 * .button-outline:hover {
-  background-color: #2faae5;
-  color: white;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  background-color: transparent !important;
+  color: #2faae5 !important;
 }
 
 * .button-outline[disabled] {
@@ -559,9 +557,14 @@
 }
 
 * .pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -620,9 +623,9 @@
 }
 
 * .pagination ul li .active {
-  background-color: #0d73ad;
+  background-color: #2faae5;
   color: white;
-  border: solid 1px #0d73ad;
+  border: solid 1px #2faae5;
 }
 
 * .pagination ul li .fas {
@@ -653,6 +656,7 @@ body table {
   border-collapse: collapse;
   width: 100%;
   table-layout: auto;
+  word-break: break-word;
 }
 
 body table table,
@@ -702,6 +706,24 @@ body table tr .btn {
 
 body table tr .btn-primary {
   background-color: #2faae5;
+}
+
+body table .state-btn {
+  border-radius: 5px;
+  text-align: left;
+}
+
+body table .state-btn i {
+  font-size: 1rem;
+  margin-right: 6.66667px;
+}
+
+body table .true {
+  color: #22b573;
+}
+
+body table .false {
+  color: #e8291c;
 }
 
 @media (max-width: 568px) {
@@ -1158,17 +1180,29 @@ body .container .card {
 }
 
 body .container .card .total-num-gp {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 568px) {
+  body .container .card .total-num-gp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: r;
+            flex-direction: r;
+  }
 }
 
 body .container .card .total-num-gp .num {
@@ -1176,14 +1210,13 @@ body .container .card .total-num-gp .num {
 }
 
 body .container .card .total-num-gp .num:not(:last-child) {
-  margin-bottom: 37.5px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 1024px) {
   body .container .card .total-num-gp .num {
     width: 25%;
     padding: 0 10px;
-    margin: 16.66667px 0;
   }
   body .container .card .total-num-gp .num:not(:last-child) {
     margin-bottom: 0;
@@ -1193,16 +1226,15 @@ body .container .card .total-num-gp .num:not(:last-child) {
 @media (max-width: 568px) {
   body .container .card .total-num-gp .num {
     width: 100%;
-    margin: 0;
   }
   body .container .card .total-num-gp .num:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 }
 
 body .container .card .total-num-gp .num .num-title,
 body .container .card .total-num-gp .num .num-content {
-  padding: 6.66667px 5px;
+  padding: 5px 5px;
   margin-bottom: 0;
 }
 
@@ -1235,6 +1267,7 @@ body .container .card .tab {
 }
 
 body .container .card .chart-gp {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1243,6 +1276,9 @@ body .container .card .chart-gp {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 568px) {
@@ -1262,25 +1298,35 @@ body .container .card .chart-gp .doughnut {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 50%;
+  width: 25%;
 }
 
 @media (max-width: 568px) {
   body .container .card .chart-gp .doughnut {
     width: 100%;
+    margin-bottom: 25px;
   }
 }
 
 body .container .card .chart-gp .doughnut .doughunt-canvas {
-  max-height: 300px;
-  margin-bottom: 25px;
+  max-height: 240px;
 }
 
 @media (max-width: 1366px) {
   body .container .card .chart-gp .doughnut .doughunt-canvas {
-    max-height: 280px;
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container .card .chart-gp .doughnut .doughunt-canvas {
+    max-height: 140px;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .chart-gp .doughnut .doughunt-canvas {
+    max-height: 180px;
   }
 }
 
@@ -1468,6 +1514,74 @@ body .container .card .chart-gp .chart .chart-canvas.w35 {
   }
 }
 
+body .container .card .remark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+body .container .card .remark .text-gp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .container .card .remark .text-gp:not(:last-child) {
+  margin-right: 16.66667px;
+}
+
+body .container .card .remark .text-gp .square {
+  width: 15px;
+  height: 15px;
+  line-height: 2;
+  margin-right: 5px;
+}
+
+body .container .card .remark .text-gp .blue {
+  background-color: #5eb5ef;
+}
+
+body .container .card .remark .text-gp .yellow {
+  background-color: #ffd778;
+}
+
+body .container .card .remark .text-gp .green {
+  background-color: #6fcdcd;
+}
+
+body .container .card .remark .text-gp .orange {
+  background-color: #ffb266;
+}
+
+body .container .card .remark .text-gp .purple {
+  background-color: #ad85ff;
+}
+
+body .container .card .remark .text-gp p {
+  color: #595757;
+  font-size: 1rem;
+}
+
 body .container .card .knob-gp {
   height: 100%;
   display: none;
@@ -1527,7 +1641,7 @@ body .container .card .knob-gp .knob p {
   text-align: center;
 }
 
-body .container .card .active {
+body .container .card .active:not(a.active) {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -1590,22 +1704,69 @@ body .container .card .explain table {
   margin-bottom: 10px;
 }
 
-body .container .card .explain table .state-btn {
+body .container .card .filter {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .container .card .filter select {
+  width: 17%;
+  height: 32px;
+  margin: 0;
+}
+
+body .container .card .filter select:not(:last-child) {
+  margin-right: 10px;
+}
+
+@media (max-width: 568px) {
+  body .container .card .filter select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+}
+
+body .container .card .filter input {
+  width: 17%;
+  height: unset;
+  height: 32px;
   border-radius: 5px;
-  text-align: left;
+  border: solid 1px #ccc;
+  margin: 0;
+  margin-right: 10px;
 }
 
-body .container .card .explain table .state-btn i {
+@media (max-width: 568px) {
+  body .container .card .filter input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+}
+
+body .container .card .filter button {
+  height: 32px;
+  padding: 2.5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
   font-size: 1rem;
-  margin-right: 6.66667px;
 }
 
-body .container .card .explain table .true {
-  color: #22b573;
-}
-
-body .container .card .explain table .false {
-  color: #e8291c;
+@media (max-width: 568px) {
+  body .container .card .filter button {
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 568px) {

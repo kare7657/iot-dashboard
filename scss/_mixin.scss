@@ -255,7 +255,6 @@
         background-color: $title-W;
         color: $text;
         padding: 0 $padding-XXS;
-
         &::-ms-expand {
             display: none;
         }
@@ -269,15 +268,15 @@
     //按鈕
     button {
         padding: 5px $padding-XS;
-        background-color: $dark-blue;
+        background-color: $blue;
         border-radius: 8px;
         border: none;
         font-size: $size-h4;
         color: $title-W;
         font-weight: bold;
         &:hover:not(.close) {
-            background-color: $blue;
             transition-duration: 0.5s;
+            opacity: 0.8;
         }
         &[disabled] {
             background-color: $light-sky;
@@ -292,17 +291,16 @@
     .button-outline {
         padding: 8px $padding-XS;
         background-color: transparent;
-        box-shadow: $dark-blue 0 0 0 1px;
+        color: $blue;
+        box-shadow: $blue 0 0 0 1px;
         font-size: $size-h4;
-        color: $dark-blue;
         font-weight: bold;
         @include mobile-L() {
             padding: 8px $padding-XS/2;
         }
         &:hover {
-            background-color: $blue;
-            color: $title-W;
-            transition-duration: 0.5s;
+            background-color: transparent !important;
+            color: $blue !important;
         }
         &[disabled] {
             background-color: $light-sky;
@@ -487,7 +485,9 @@
     }
     //頁碼
     .pagination {
-        display: flex;
+        width: 100%;
+        display: flex !important;
+        flex-direction: row;
         justify-content: flex-end;
         margin-top: $margin-S;
         white-space: nowrap;
@@ -525,9 +525,9 @@
                     }
                 }
                 .active {
-                    background-color: $dark-blue;
+                    background-color: $blue;
                     color: $title-W;
-                    border: solid 1px $dark-blue;
+                    border: solid 1px $blue;
                 }
                 .fas {
                     font-size: $size-p;
@@ -883,6 +883,7 @@
         border-collapse: collapse;
         width: 100%;
         table-layout: auto;
+        word-break: break-word;
         table,
         th,
         td {
@@ -917,6 +918,20 @@
             .btn-primary {
                 background-color: $blue;
             }
+        }
+        .state-btn {
+            border-radius: 5px;
+            text-align: left;
+            i {
+                font-size: $size-p;
+                margin-right: $margin-XS/1.5;
+            }
+        }
+        .true {
+            color: $green;
+        }
+        .false {
+            color: $red;
         }
     }
     .mb-separate {
