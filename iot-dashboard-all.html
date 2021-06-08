@@ -11,43 +11,7 @@
 
 <body>
 	<div class="container">
-		<div class="card col-12 col-sm-12 col-xl-2">
-			<div class="total-num-gp">
-				<div class="num">
-					<h4 class="num-title">
-						機關數量
-					</h4>
-					<div class="num-content">
-						40
-					</div>
-				</div>
-				<div class="num">
-					<h4 class="num-title">
-						監測站數量
-					</h4>
-					<div class="num-content">
-						7,149
-					</div>
-				</div>
-				<div class="num">
-					<h4 class="num-title">
-						設備數量
-					</h4>
-					<div class="num-content">
-						4,828
-					</div>
-				</div>
-				<div class="num">
-					<h4 class="num-title">
-						物理量數量
-					</h4>
-					<div class="num-content">
-						27,244
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card col-12 col-sm-12 col-xl-10">
+		<div class="card col-12 col-sm-12 col-xl-8">
 			<div class="chart-gp">
 				<div class=" doughnut">
 					<h3 class="text-center">機關數量</h3>
@@ -90,16 +54,19 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="card col-12 col-sm-12 col-xl-4">
 			<h3 class="text-center">資料品質</h3>
-			<select class="" id="select1">
+			<select class="w-100" id="select1">
 				<option value="option1">水利署</option>
 				<option value="option2">option 2</option>
 				<option value="option3">option 3</option>
 				<option value="option4">option 4</option>
 				<option value="option5">option 5</option>
 			</select>
+			<div class="more">
+				<a class="mr-2" href="iot-dashboard-unity-station.html">查詢全機關物理量</a>
+				<a href="iot-dashboard-organ-gp.html">檢視此機關詳細資料</a>
+			</div>
 			<!-- knob-gp1 -->
 			<div class="knob-gp active" id="knob-gp1">
 				<div class="knob">
@@ -138,11 +105,46 @@
 					<input type="text" value="70" class="dial" id="dial8">
 				</div>
 			</div>
-			<div class="more">
-				<a href="iot-dashboard-organ-gp.html">檢視詳細資料</a>
-			</div>
 		</div>
-		<div class="card col-12 col-sm-6 col-xl-4">
+
+		<div class="card col-12 col-sm-12 col-xl-2">
+			<div class="total-num-gp">
+				<div class="num">
+					<h4 class="num-title">
+						機關數量
+					</h4>
+					<div class="num-content">
+						40
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						監測站數量
+					</h4>
+					<div class="num-content">
+						7,149
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						設備數量
+					</h4>
+					<div class="num-content">
+						4,828
+					</div>
+				</div>
+				<div class="num">
+					<h4 class="num-title">
+						物理量數量
+					</h4>
+					<div class="num-content">
+						27,244
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="card col-12 col-sm-6 col-xl-5">
 			<div class="chart-gp">
 				<div class=" chart">
 					<h3 class="text-center">物理量分類統計(top N)</h3>
@@ -150,7 +152,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-12 col-sm-6 col-xl-4">
+		<div class="card col-12 col-sm-6 col-xl-5">
 			<div class="chart-gp">
 				<div class=" chart">
 					<h3 class="text-center">淹水感測器,水位站 數量統計</h3>

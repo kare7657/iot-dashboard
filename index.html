@@ -13,7 +13,7 @@
 
 <body>
 	<!-- 導覽列 -->
-	<div class="minibar">
+	<!-- <div class="minibar">
 		<div class="container">
 			<div class="btn">
 				<ul>
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 	<nav class="navbar">
 		<div class="pc">
 			<div class="navbar-L logo">
@@ -89,25 +89,49 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-12 col-sm-12 col-xl-9">
+		<div class="card col-12 col-sm-12 col-xl-5">
 			<div class="chart-gp">
-				<div class=" doughnut">
+				<div class=" doughnut" style="width: 50%;">
 					<h3 class="text-center">機關數量</h3>
 					<canvas class="doughunt-canvas" id="doughunt-canvas"></canvas>
 				</div>
-				<div class=" doughnut">
+				<div class=" doughnut" style="width: 50%;">
 					<h3 class="text-center">設備數量</h3>
 					<canvas class="doughunt-canvas" id="doughunt-canvas2"></canvas>
 				</div>
-				<div class=" doughnut">
+				<div class=" doughnut" style="width: 50%;">
 					<h3 class="text-center">監測站數量</h3>
 					<canvas class="doughunt-canvas" id="doughunt-canvas3"></canvas>
 				</div>
-				<div class=" doughnut">
+				<div class=" doughnut" style="width: 50%;">
 					<h3 class="text-center">物理量數量</h3>
 					<canvas class="doughunt-canvas" id="doughunt-canvas4"></canvas>
 				</div>
 			</div>
+		</div>
+		<div class="card col-12 col-sm-12 col-xl-4 ">
+			<form>
+				<div class="form-gp">
+					<label for="account">使用者名稱</label>
+					<input required type="text" name="account" id="account">
+				</div>
+				<div class="form-gp">
+					<label for="password">密碼</label>
+					<input type="password" name="password" id="password">
+				</div>
+				<div class="form-gp">
+					<input class="mt-0" type="submit" value="登入">
+					<input class="mt-0" type="button" value="註冊">
+				</div>
+				<div class="form-gp">
+					<h4 class="title">使用其他帳號登入</h4>
+					<input class="other-btn" type="button" value="Facebook">
+					<input class="other-btn" style="background-color: #CC0000 !important;" type="button" value="Google">
+					<input class="other-btn" style="background-color: #17A2B8 !important;" type="button" value="WRISP">
+					<input class="other-btn" style="background-color: #F5B107 !important;" type="button" value="E政府">
+				</div>
+			</form>
+
 		</div>
 
 	</div>
@@ -401,13 +425,7 @@
 					],
 					label: 'Dataset 1'
 				}],
-				labels: [
-					'水利署',
-					'縣市政府',
-					'農田水利署',
-					'營建署',
-					'其他單位'
-				]
+
 			},
 
 			options: {
@@ -446,13 +464,7 @@
 					],
 					label: 'Dataset 1'
 				}],
-				labels: [
-					'水利署',
-					'縣市政府',
-					'農田水利署',
-					'營建署',
-					'其他單位'
-				]
+
 			},
 
 			options: {
@@ -490,13 +502,7 @@
 					],
 					label: 'Dataset 1'
 				}],
-				labels: [
-					'水利署',
-					'縣市政府',
-					'農田水利署',
-					'營建署',
-					'其他單位'
-				]
+
 			},
 
 			options: {
@@ -534,13 +540,7 @@
 					],
 					label: 'Dataset 1'
 				}],
-				labels: [
-					'水利署',
-					'縣市政府',
-					'農田水利署',
-					'營建署',
-					'其他單位'
-				]
+
 			},
 
 			options: {

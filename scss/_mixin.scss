@@ -134,7 +134,7 @@
         width: 100%;
         height: 40px;
         border-radius: 5px;
-        border: solid 1px $light-sky;
+        border: solid 1px $blue;
         background-color: $title-W;
         color: $text;
         padding: 0 $padding-XXS;
@@ -166,9 +166,9 @@
             }
         }
         &[disabled] {
-            background-color: $light-sky;
+            background-color: $blue;
             &:hover {
-                background-color: $light-sky;
+                background-color: $blue;
             }
         }
         &[type="range"] {
@@ -973,6 +973,217 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@mixin form() {
+    @include mobile-L() {
+        border-radius: unset;
+    }
+    form {
+        padding: $padding-XS $padding-S;
+        @include web-S() {
+            padding: $padding-XS $padding-M;
+        }
+        @include pad() {
+            padding: $padding-XS 0;
+        }
+        @include mobile-L {
+            border-radius: 0;
+        }
+        .form-gp {
+            padding: 0 $padding-XS;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-bottom: $margin-S;
+            text-align: justify;
+            p {
+                width: 100%;
+                font-size: $size-p;
+                line-height: $size-p * 1.7;
+                padding-top: $padding-XXS;
+            }
+            @include web-S {
+                padding: 0;
+            }
+            @include pad() {
+                padding: 0 $padding-S * 1.5;
+                flex-direction: column;
+            }
+            @include mobile-L() {
+                padding: 0 $padding-XS * 1.5;
+            }
+
+            label {
+                width: 100%;
+                padding: 0;
+                margin-right: $margin-M;
+                color: $blue;
+                font-size: $size-h4;
+                font-weight: bold;
+            }
+            input,
+            select {
+                &[type="submit"],
+                &[type="reset"] {
+                    width: 48%;
+                    height: 40px;
+                    background-color: $blue;
+                    color: $title-W;
+                    font-size: $size-h4;
+                    font-weight: bold;
+                    line-height: 40px;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 0;
+                    text-decoration: none;
+                    margin-top: $margin-XS;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $blue;
+                    }
+                    @include pad(){
+                        width: 100%;
+                        margin-bottom: $margin-XS*1.5;
+                    }
+                }
+                &[type="button"] {
+                    width: 48%;
+                    height: 40px;
+                    background-color: transparent;
+                    border: solid 1px $blue;
+                    border-radius: 8px;
+                    color: $blue;
+                    font-size: $size-h4;
+                    font-weight: bold;
+                    line-height: 40px;
+                    padding: 0;
+                    text-decoration: none;
+                    margin-top: $margin-XS * 2;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $blue;
+                        color: $title-W;
+                        border: solid 1px $blue;
+                    }
+                    @include pad(){
+                        width: 100%;
+                    }
+                }
+                &[disabled] {
+                    background-color: $light-sky;
+                    &:hover {
+                        background-color: $light-sky;
+                    }
+                }
+            }
+            textarea {
+                width: 100%;
+                border-radius: 5px;
+                border: 1px solid $light-sky;
+                padding: 0 $padding-XXS;
+                color: $text;
+                font-size: $size-h4;
+                line-height: $size-h4 * 1.5;
+            }
+            a {
+                font-size: $size-h4;
+                line-height: $size-h4;
+                margin-top: $margin-XS * 2;
+                color: $blue;
+                font-weight: bold;
+                text-align: center;
+            }
+            .title{
+                margin: 0;
+                border-top: 1px solid $blue;
+                width: 100%;
+                text-align: center;
+                padding-top: $padding-XXS*2;
+                margin-top: $margin-XS;
+                color: $blue;
+            }
+            .other-btn {
+                width: 100% !important;
+                background-color: #4064ac !important;
+                border: none !important;
+                color: $title-W !important;
+                cursor: pointer;
+            }
+        }
+        //checkbox
+        .form-check {
+            width: 100%;
+            padding: 0 $padding-S;
+            margin: 0;
+            margin-bottom: $margin-S;
+            @include web-S {
+                padding: 0;
+            }
+            @include pad() {
+                padding: 0 $padding-S * 1.5;
+                flex-direction: column;
+            }
+            @include mobile-L() {
+                padding: 0 $padding-XS * 1.5;
+            }
+            input,
+            select {
+                text-align: left;
+                &[type="checkbox"] {
+                    width: 20px;
+                    height: 20px;
+                    line-height: $size-h4 * 2;
+                    margin-top: 8px;
+                    border: 1px solid $light-sky;
+                }
+            }
+            select {
+                width: 100%;
+                height: 40px;
+            }
+            label {
+                padding: 0;
+                margin: 0 $margin-S;
+                color: $text;
+                font-size: $size-p;
+            }
+            .form-check-label {
+                line-height: $size-h4 * 2;
+                margin: 0 $margin-XS * 2 $margin-XS $margin-S;
+            }
+            .form-check-input {
+                margin-left: 0px;
+            }
+            .check-input {
+                background-color: #fff;
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid $light-sky;
+                padding: 0 $padding-XXS;
+                color: $text;
+                font-size: $size-h4;
+                line-height: $size-h4;
+                margin: $margin-XS 0;
+            }
+            .h4 {
+                color: $blue;
+                font-size: $size-h4;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+                margin-bottom: $margin-XS;
+            }
+        }
+        span {
+            color: $red;
+            margin-left: 3px;
         }
     }
 }

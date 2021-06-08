@@ -11,35 +11,32 @@
 
 <body>
 	<a href="#top">
-        <div class="back-top">▲</div>
-    </a>
+		<div class="back-top">▲</div>
+	</a>
 	<div class="container">
-		<div class="card col-12 col-sm-12 col-xl-6">
+
+		<div class="card col-12 col-sm-12 col-xl-8">
 			<div class="chart-gp">
 				<div class=" chart">
-					<h3 class="text-center">各機關資料穩定度排行</h3>
-					<canvas id="horizontal-bar3" class="chart-canvas w50"></canvas>
-				</div>
-			</div>
-		</div>
-		<div class="card col-12 col-sm-12 col-xl-6">
-			<div class="chart-gp">
-				<div class=" chart">
-					<h3 class="text-center">淹水感測器/水位站-數量統計</h3>
-					<canvas id="horizontal-bar4" class="chart-canvas w50" height='350'></canvas>
+					<h3 class="text-center">物理量分類統計(top N)</h3>
+					<canvas id="horizontal-bar5" class="chart-canvas w65" height='400'></canvas>
+
 				</div>
 			</div>
 		</div>
 
 		<div class="card col-12 col-sm-12 col-xl-4">
 			<h3 class="text-center">資料品質</h3>
-			<select class="" id="select1">
+			<select class="w-100" id="select1">
 				<option value="option1">一河局</option>
 				<option value="option2">option 2</option>
 				<option value="option3">option 3</option>
 				<option value="option4">option 4</option>
 				<option value="option5">option 5</option>
 			</select>
+			<div class="more">
+				<a href="iot-dashboard-unity.html">檢視詳細資料</a>
+			</div>
 			<!-- knob-gp1 -->
 			<div class="knob-gp active" id="knob-gp1">
 				<div class="knob">
@@ -79,11 +76,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-12 col-sm-12  col-xl-8">
+		<div class="card col-12 col-sm-12 col-xl-6">
 			<div class="chart-gp">
 				<div class=" chart">
-					<h3 class="text-center">物理量分類統計(top N)</h3>
-					<canvas id="horizontal-bar5" class="chart-canvas w65" height='400'></canvas>
+					<h3 class="text-center">各機關資料穩定度排行</h3>
+					<canvas id="horizontal-bar3" class="chart-canvas w50"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="card col-12 col-sm-12 col-xl-6">
+			<div class="chart-gp">
+				<div class=" chart">
+					<h3 class="text-center">淹水感測器/水位站-數量統計</h3>
+					<canvas id="horizontal-bar4" class="chart-canvas w50" height='350'></canvas>
 				</div>
 			</div>
 		</div>

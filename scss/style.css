@@ -113,7 +113,7 @@
   width: 100%;
   height: 40px;
   border-radius: 5px;
-  border: solid 1px #a7e5ff;
+  border: solid 1px #2faae5;
   background-color: white;
   color: #595757;
   padding: 0 10px;
@@ -147,11 +147,11 @@
 }
 
 * input[disabled] {
-  background-color: #a7e5ff;
+  background-color: #2faae5;
 }
 
 * input[disabled]:hover {
-  background-color: #a7e5ff;
+  background-color: #2faae5;
 }
 
 * input[type="range"] {
@@ -1150,6 +1150,294 @@ body .container {
 
 @media (max-width: 568px) {
   body .container {
+    border-radius: unset;
+  }
+}
+
+body .container form {
+  padding: 30px 60px;
+}
+
+@media (max-width: 1024px) {
+  body .container form {
+    padding: 30px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container form {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container form {
+    border-radius: 0;
+  }
+}
+
+body .container form .form-gp {
+  padding: 0 30px;
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+body .container form .form-gp p {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  padding-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  body .container form .form-gp {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container form .form-gp {
+    padding: 0 90px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container form .form-gp {
+    padding: 0 45px;
+  }
+}
+
+body .container form .form-gp label {
+  width: 100%;
+  padding: 0;
+  margin-right: 50px;
+  color: #2faae5;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+body .container form .form-gp input[type="submit"], body .container form .form-gp input[type="reset"],
+body .container form .form-gp select[type="submit"],
+body .container form .form-gp select[type="reset"] {
+  width: 48%;
+  height: 40px;
+  background-color: #2faae5;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 40px;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+body .container form .form-gp input[type="submit"]:hover, body .container form .form-gp input[type="reset"]:hover,
+body .container form .form-gp select[type="submit"]:hover,
+body .container form .form-gp select[type="reset"]:hover {
+  background-color: #2faae5;
+}
+
+@media (max-width: 768px) {
+  body .container form .form-gp input[type="submit"], body .container form .form-gp input[type="reset"],
+  body .container form .form-gp select[type="submit"],
+  body .container form .form-gp select[type="reset"] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+body .container form .form-gp input[type="button"],
+body .container form .form-gp select[type="button"] {
+  width: 48%;
+  height: 40px;
+  background-color: transparent;
+  border: solid 1px #2faae5;
+  border-radius: 8px;
+  color: #2faae5;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 40px;
+  padding: 0;
+  text-decoration: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+body .container form .form-gp input[type="button"]:hover,
+body .container form .form-gp select[type="button"]:hover {
+  background-color: #2faae5;
+  color: white;
+  border: solid 1px #2faae5;
+}
+
+@media (max-width: 768px) {
+  body .container form .form-gp input[type="button"],
+  body .container form .form-gp select[type="button"] {
+    width: 100%;
+  }
+}
+
+body .container form .form-gp input[disabled],
+body .container form .form-gp select[disabled] {
+  background-color: #a7e5ff;
+}
+
+body .container form .form-gp input[disabled]:hover,
+body .container form .form-gp select[disabled]:hover {
+  background-color: #a7e5ff;
+}
+
+body .container form .form-gp textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #a7e5ff;
+  padding: 0 10px;
+  color: #595757;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+}
+
+body .container form .form-gp a {
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  margin-top: 20px;
+  color: #2faae5;
+  font-weight: bold;
+  text-align: center;
+}
+
+body .container form .form-gp .title {
+  margin: 0;
+  border-top: 1px solid #2faae5;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 10px;
+  color: #2faae5;
+}
+
+body .container form .form-gp .other-btn {
+  width: 100% !important;
+  background-color: #4064ac !important;
+  border: none !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+body .container form .form-check {
+  width: 100%;
+  padding: 0 60px;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 1024px) {
+  body .container form .form-check {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container form .form-check {
+    padding: 0 90px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container form .form-check {
+    padding: 0 45px;
+  }
+}
+
+body .container form .form-check input,
+body .container form .form-check select {
+  text-align: left;
+}
+
+body .container form .form-check input[type="checkbox"],
+body .container form .form-check select[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  line-height: 2.25rem;
+  margin-top: 8px;
+  border: 1px solid #a7e5ff;
+}
+
+body .container form .form-check select {
+  width: 100%;
+  height: 40px;
+}
+
+body .container form .form-check label {
+  padding: 0;
+  margin: 0 25px;
+  color: #595757;
+  font-size: 1rem;
+}
+
+body .container form .form-check .form-check-label {
+  line-height: 2.25rem;
+  margin: 0 20px 10px 25px;
+}
+
+body .container form .form-check .form-check-input {
+  margin-left: 0px;
+}
+
+body .container form .form-check .check-input {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #a7e5ff;
+  padding: 0 10px;
+  color: #595757;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  margin: 10px 0;
+}
+
+body .container form .form-check .h4 {
+  color: #2faae5;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+body .container form span {
+  color: #e8291c;
+  margin-left: 3px;
+}
+
+@media (max-width: 568px) {
+  body .container {
     border: none;
     padding: 10px;
   }
@@ -1191,17 +1479,35 @@ body .container .card .total-num-gp {
   text-align: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media (max-width: 1024px) {
+  body .container .card .total-num-gp {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container .card .total-num-gp {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 @media (max-width: 568px) {
   body .container .card .total-num-gp {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: r;
-            flex-direction: r;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1309,7 +1615,7 @@ body .container .card .chart-gp .doughnut {
 }
 
 body .container .card .chart-gp .doughnut .doughunt-canvas {
-  max-height: 240px;
+  max-height: 200px;
 }
 
 @media (max-width: 1366px) {
@@ -1351,12 +1657,12 @@ body .container .card .chart-gp .chart {
 body .container .card .chart-gp .chart .chart-canvas {
   height: 80%;
   max-height: 220px;
-  width: 400px;
+  width: 450px;
 }
 
 @media (max-width: 1366px) {
   body .container .card .chart-gp .chart .chart-canvas {
-    width: 350px;
+    width: 450px;
     max-height: 200px;
   }
 }
@@ -1705,7 +2011,7 @@ body .container .card .explain table {
 }
 
 body .container .card .filter {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1714,28 +2020,63 @@ body .container .card .filter {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 0;
+}
+
+body .container .card .filter label {
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #2faae5;
+  margin: 0;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  body .container .card .filter label {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .filter label {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
 }
 
 body .container .card .filter select {
-  width: 17%;
+  width: 11%;
   height: 32px;
   margin: 0;
 }
 
 body .container .card .filter select:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 25px;
+}
+
+@media (max-width: 568px) {
+  body .container .card .filter select:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .container .card .filter select {
+    width: 35%;
+    margin-bottom: 25px;
+  }
 }
 
 @media (max-width: 568px) {
   body .container .card .filter select {
     width: 100%;
     height: 40px;
-    margin-bottom: 15px;
   }
 }
 
 body .container .card .filter input {
-  width: 17%;
+  width: 11%;
   height: unset;
   height: 32px;
   border-radius: 5px;
@@ -1744,11 +2085,18 @@ body .container .card .filter input {
   margin-right: 10px;
 }
 
+@media (max-width: 1024px) {
+  body .container .card .filter input {
+    width: 35%;
+  }
+}
+
 @media (max-width: 568px) {
   body .container .card .filter input {
     width: 100%;
     height: 40px;
     margin-bottom: 15px;
+    margin-right: 0;
   }
 }
 
@@ -1766,6 +2114,7 @@ body .container .card .filter button {
     width: 100%;
     height: 38px;
     margin-bottom: 15px;
+    margin-right: 0;
   }
 }
 
