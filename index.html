@@ -133,6 +133,8 @@
 	<!-- chartjs -->
 	<script src="js/chart2.8.js"></script>
 	<script src="js/utils.js"></script>
+	<script src="js/chartjs-plugin-labels.min.js"></script>
+
 
 	<!-- mobile-menu -->
 	<script>
@@ -411,18 +413,26 @@
 						color(window.chartColors.orange).alpha(0.8).rgbString(),
 						color(window.chartColors.purple).alpha(0.8).rgbString(),
 					],
-					label: 'Dataset 1'
+					label: 'Dataset 1',
 				}],
-
 			},
 
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
-
 				plugins: {
 					legend: {
 						position: 'top',
+					},
+					labels: {
+						render: 'percentage',
+						fontSize: 14,
+						fontColor: 'white',
+						textShadow: true,
+						shadowColor: 'rgba(0,0,0,1)',
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 5,
 					}
 				},
 				animation: {
@@ -461,6 +471,16 @@
 				plugins: {
 					legend: {
 						position: 'top',
+					},
+					labels: {
+						render: 'percentage',
+						fontSize: 14,
+						fontColor: 'white',
+						textShadow: true,
+						shadowColor: 'rgba(0,0,0,1)',
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 5,
 					}
 				},
 				animation: {
@@ -499,6 +519,16 @@
 				plugins: {
 					legend: {
 						position: 'top',
+					},
+					labels: {
+						render: 'percentage',
+						fontSize: 14,
+						fontColor: 'white',
+						textShadow: true,
+						shadowColor: 'rgba(0,0,0,1)',
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 5,
 					}
 				},
 				animation: {
@@ -524,7 +554,7 @@
 						color(window.chartColors.yellow).alpha(0.8).rgbString(),
 						color(window.chartColors.green).alpha(0.8).rgbString(),
 						color(window.chartColors.orange).alpha(0.8).rgbString(),
-						color(window.chartColors.purple).alpha(0.8).rgbString(),
+						color(window.chartColors.purple).alpha(0.7).rgbString(),
 					],
 					label: 'Dataset 1'
 				}],
@@ -537,6 +567,16 @@
 				plugins: {
 					legend: {
 						position: 'top',
+					},
+					labels: {
+						render: 'percentage',
+						fontSize: 14,
+						fontColor: 'white',
+						textShadow: true,
+						shadowColor: 'rgba(0,0,0,1)',
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 5,
 					}
 				},
 				animation: {
