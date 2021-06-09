@@ -982,14 +982,15 @@
         border-radius: unset;
     }
     form {
-        padding: $padding-XS $padding-S;
+        padding: $padding-XS $padding-XS;
         @include web-S() {
-            padding: $padding-XS $padding-M;
+            padding: $padding-XS $padding-L*1.5;
         }
         @include pad() {
-            padding: $padding-XS 0;
+            padding: $padding-XS $padding-M;
         }
         @include mobile-L {
+            padding: $padding-XS $padding-XS;
             border-radius: 0;
         }
         .form-gp {
@@ -1012,11 +1013,7 @@
                 padding: 0;
             }
             @include pad() {
-                padding: 0 $padding-S * 1.5;
                 flex-direction: column;
-            }
-            @include mobile-L() {
-                padding: 0 $padding-XS * 1.5;
             }
 
             label {
