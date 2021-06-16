@@ -984,7 +984,7 @@
     form {
         padding: $padding-XS $padding-XS;
         @include web-S() {
-            padding: $padding-XS $padding-L*1.5;
+            padding: $padding-XS $padding-L * 1.5;
         }
         @include pad() {
             padding: $padding-XS $padding-M;
@@ -1044,9 +1044,9 @@
                     &:hover {
                         background-color: $blue;
                     }
-                    @include pad(){
+                    @include pad() {
                         width: 100%;
-                        margin-bottom: $margin-XS*1.5;
+                        margin-bottom: $margin-XS * 1.5;
                     }
                 }
                 &[type="button"] {
@@ -1068,7 +1068,7 @@
                         color: $title-W;
                         border: solid 1px $blue;
                     }
-                    @include pad(){
+                    @include pad() {
                         width: 100%;
                     }
                 }
@@ -1096,12 +1096,12 @@
                 font-weight: bold;
                 text-align: center;
             }
-            .title{
+            .title {
                 margin: 0;
                 border-top: 1px solid $blue;
                 width: 100%;
                 text-align: center;
-                padding-top: $padding-XXS*2;
+                padding-top: $padding-XXS * 2;
                 margin-top: $margin-XS;
                 color: $blue;
             }
@@ -1111,6 +1111,47 @@
                 border: none !important;
                 color: $title-W !important;
                 cursor: pointer;
+            }
+            //圖片驗證碼
+            .code-gp {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                @include mobile-XS() {
+                    flex-wrap: wrap;
+                }
+                .code {
+                    width: calc(65% - 20px);
+                    margin-right: 10px;
+                    margin-bottom: 0;
+                    @include web-L() {
+                        width: calc(100% - 115px);
+                    }
+                    @include mobile-L() {
+                        width: calc(65% - 25px);
+                    }
+                    @include mobile-XS() {
+                        width: 100%;
+                        margin-right: 0;
+                        margin-bottom: $margin-XS;
+                    }
+                }
+                .RP {
+                    width: 30%;
+                    max-height: 25px;
+                    margin: 0;
+                    margin-right: 10px;
+                    @include web-L {
+                        width: auto;
+                        max-height: unset;
+                        height: 30px;
+                    }
+                }
+                .reform {
+                    height: 20px;
+                    width: 20px;
+                    margin: 0;
+                }
             }
         }
         //checkbox
