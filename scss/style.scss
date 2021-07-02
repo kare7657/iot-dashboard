@@ -457,6 +457,66 @@ body {
                     }
                 }
             }
+            .title-select {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                margin-bottom: $margin-S;
+                @include mobile-L {
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+                .left {
+                    width: 20%;
+                    @include web-L {
+                        width: 30%;
+                    }
+                    @include web-S {
+                        width: 20%;
+                    }
+                    @include mobile-L {
+                        width: 100%;
+                        margin-bottom: $margin-XS;
+                    }
+                    h4 {
+                        margin-bottom: 0;
+                        margin-right: $margin-XS;
+                    }
+                }
+                .right {
+                    width: calc(80% - 10px);
+                    display: flex;
+                    justify-content: center;
+                    @include web-L {
+                        width: 70%;
+                    }
+                    @include web-S {
+                        width: calc(80% - 10px);
+                    }
+                    @include mobile-L {
+                        width: 100%;
+                    }
+                    select {
+                        width: calc(80% - 10px);
+                        margin-bottom: 0;
+                    }
+                    .icon {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        text-align: center;
+                        margin-left: $margin-XS;
+                        a {
+                            padding: 2px $padding-XXS/1.5;
+                            img {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .container.index {
