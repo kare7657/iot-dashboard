@@ -116,6 +116,16 @@ body {
                     }
                 }
             }
+            .info-table {
+                margin: $margin-XS 0;
+                text-align: center;
+                th {
+                    width:17.5%;
+                }
+                th:first-child {
+                    width: 30%;
+                }
+            }
             .tab {
                 margin-top: $margin-S;
                 select {

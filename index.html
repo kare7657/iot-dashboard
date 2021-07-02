@@ -80,49 +80,143 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-12 col-sm-12 col-xl-5">
-			<div class="chart-gp">
-				<div class=" doughnut" style="width: 50%;">
-					<h3 class="text-center">機關數量</h3>
-					<canvas class="doughunt-canvas" id="doughunt-canvas"></canvas>
-				</div>
-				<div class=" doughnut" style="width: 50%;">
-					<h3 class="text-center">設備數量</h3>
-					<canvas class="doughunt-canvas" id="doughunt-canvas2"></canvas>
-				</div>
-				<div class=" doughnut" style="width: 50%;">
-					<h3 class="text-center">監測站數量</h3>
-					<canvas class="doughunt-canvas" id="doughunt-canvas3"></canvas>
-				</div>
-				<div class=" doughnut" style="width: 50%;">
-					<h3 class="text-center">物理量數量</h3>
-					<canvas class="doughunt-canvas" id="doughunt-canvas4"></canvas>
-				</div>
-			</div>
-			<div class="remark">
-				<div class="text-gp">
-					<div class="square blue"></div>
-					<p>水利署</p>
-				</div>
-				<div class="text-gp">
-					<div class="square yellow"></div>
-					<p>縣市政府</p>
-				</div>
-				<div class="text-gp">
-					<div class="square green"></div>
-					<p>農田水利署</p>
-				</div>
-				<div class="text-gp">
-					<div class="square orange"></div>
-					<p>營建署</p>
-				</div>
-				<div class="text-gp">
-					<div class="square purple"></div>
-					<p>其他單位</p>
-				</div>
-			</div>
+		<div class="card col-12 col-sm-12 col-xl-6">
+			<p>機關(構)區分為：水利署、縣市政府、農田水利署、營建署及其他單位五大群組，機關(構)使用者依循 <a href="">「水利監測詮釋資料登記及上傳資料內容參考表」</a>
+				制定之分類與物理量名稱進行感知、傳輸、應用等監測設備監測資料上傳作業。
+			</p>
+
+			<p>機關(構)使用者透過「整合性作業與管理網站」進行物理量管理及資料閱覽權限(開放程度)設定。</p>
+
+			<p>下表為目前「整合性作業與管理網站」收納之機關群組與開放之物理量分類對照表：</p>
+			<table class="info-table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>水利署</th>
+						<th>縣市政府</th>
+						<th>農田水利署</th>
+						<th>營建署</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>水文</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>抽水量</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>閘門</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>電力</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>其他</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>淹水深度</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>監視</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>水質</td>
+						<td>√</td>
+						<td>√</td>
+						<td></td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>堤防結構安全</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>揚塵</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>氣象</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>沖刷粒子</td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>GPS</td>
+						<td></td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>介接</td>
+						<td></td>
+						<td>√</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>灌溉</td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>污水</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>「水資源物聯網感測基礎雲端作業平臺」定期(每年兩次)將各機關群組開放之物理量提供給 <a href="">「民生公共物聯網-資料服務平台」</a> 進行對外資料供應，並將水利署資料上架所屬 <a
+					href="">「水利資料整合雲平台」</a></p>
 		</div>
-		<div class="card col-12 col-sm-12 col-xl-4 ">
+		<div class="card col-12 col-sm-12 col-xl-3 ">
 			<form>
 				<div class="form-gp">
 					<label for="account">使用者名稱</label>
