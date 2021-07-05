@@ -17,14 +17,25 @@
 	</a>
 	<div class="container">
 		<div class="card col-12 col-sm-12 col-xl-4">
-			<h3 class="text-center">資料品質</h3>
-			<select id="select1">
-				<option value="option1">一河局</option>
-				<option value="option2">option 2</option>
-				<option value="option3">option 3</option>
-				<option value="option4">option 4</option>
-				<option value="option5">option 5</option>
-			</select>
+			<div class="title-select">
+				<div class="left">
+					<h4 class="text-center">機關群組</h4>
+				</div>
+				<div class="right">
+					<select id="select1">
+						<option value="option1">水利署</option>
+						<option value="option2">option 2</option>
+						<option value="option3">option 3</option>
+						<option value="option4">option 4</option>
+						<option value="option5">option 5</option>
+					</select>
+					<div class="icon">
+						<a href="iot-dashboard-unity.html"><img src="img/squared-bullet-list.svg" alt="檢視機關群組資料"></a>
+					</div>
+				</div>
+			</div>
+			<h3 class="text-center mb-0">資料品質</h3>
+
 			<!-- knob-gp1 -->
 			<div class="knob-gp active" id="knob-gp1">
 				<div class="knob">
@@ -101,17 +112,27 @@
 				</div>
 
 				<div class="col-12 col-xl-5">
-					<h3 class="text-center">監測站</h3>
-					<select class="w-100 mb-2">
-						<option value="option1">名稱1</option>
-						<option value="option2">名稱2</option>
-						<option value="option3">名稱3</option>
-						<option value="option4">名稱4</option>
-						<option value="option5">名稱5</option>
-					</select>
-					<div class="more mb-3">
-						<a href="iot-dashboard-unity-station.html">檢視詳細資料</a>
+					<div class="title-select">
+						<div class="left">
+							<h4 class="text-center">監測站</h4>
+						</div>
+						<div class="right">
+							<select>
+								<option value="option1">東港鎮_東港派出所</option>
+								<option value="option2">option 2</option>
+								<option value="option3">option 3</option>
+								<option value="option4">option 4</option>
+								<option value="option5">option 5</option>
+							</select>
+							<div class="icon">
+								<a href="iot-dashboard-unity-station.html"><img src="img/squared-bullet-list.svg"
+										alt="檢視機關群組資料"></a>
+								<a href="iot-dashboard-unity-7day.html"><img src="img/7day.svg"
+										alt="檢視7天趨勢圖"></a>
+							</div>
+						</div>
 					</div>
+					<h3 class="text-center">東港鎮_東港派出所</h3>
 					<table>
 						<tbody>
 							<tr>
@@ -231,13 +252,9 @@
 								</tr>
 							</tbody>
 						</table>
-
-					</div>
-
-					<div class="more">
-						<a href="iot-dashboard-unity-7day.html">檢視7天趨勢圖</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
