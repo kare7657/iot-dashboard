@@ -99,6 +99,30 @@
 				</div>
 			</div>
 		</div>
+		<!-- <input type="button" value="提示" data-toggle="modal" data-target="#modalChangPWD"> -->
+	</div>
+
+	<!-- modal-iot -->
+	<div class="modal fade modal-iot " id="modalChangPWD" tabindex="-1" role="dialog"
+		aria-labelledby="modalPrivateLabel" data-backdrop="static" style=" padding-top: 0;">
+		<form name="fm_ChangPWD" id="fm_ChangPWD" method="post" action="ChangPWD.jsp" target="frm_ChangPWD">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="modal-title" id="modalPrivateLabel">提示</h2>
+					</div>
+					<div class="modal-body">
+						<div class="img-gp">
+							<img class="" src="img/pin.jpg" alt="">
+							<p>游標移置長條圖時，可檢視圖表數據</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 
 	<!-- jQuery Knob -->
@@ -371,6 +395,7 @@
 				}
 			}
 		});
+
 	</script>
 
 	<!-- 直向bar+line-chart -->
@@ -431,35 +456,93 @@
 	<!-- 直向bar+line+stacked-chart -->
 	<script>
 		var barChartData = {
-			labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局'],
+			labels: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局', '項目11', '項目12', '項目13', '項目14', '項目15', '項目16', '項目17'],
 			datasets: [{
 				label: '數據1',
 				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
 				borderWidth: 0,
-				data: [80, 40, 60, 40, 80, 50, 90, 30, 60, 70],
+				data: [80, 40, 60, 40, 80, 50, 90, 30, 60, 70, 80, 40, 60, 40, 80, 50, 90],
 			}, {
 				label: '數據2',
 				backgroundColor: color(window.chartColors.orange).alpha(0.8).rgbString(),
 				borderWidth: 0,
 
-				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70],
+				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70, 20, 40, 70, 50, 85, 60, 105],
 			}, {
 				label: '數據3',
 				backgroundColor: color(window.chartColors.green).alpha(0.8).rgbString(),
 				borderWidth: 0,
-				data: [30, 50, 60, 62, 90, 40, 95, 25, 30, 30],
+				data: [30, 50, 60, 62, 90, 40, 95, 25, 30, 30, 30, 50, 60, 62, 90, 40, 95],
 			}, {
 				label: '數據4',
 				backgroundColor: color(window.chartColors.purple).alpha(0.8).rgbString(),
 				borderWidth: 0,
 
 
-				data: [20, 40, 50, 50, 10, 60, 40, 35, 35, 20],
+				data: [20, 40, 50, 50, 10, 60, 40, 35, 35, 20, 20, 40, 50, 50, 10, 60, 40],
 			}, {
 				label: '數據5',
 				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
 				borderWidth: 0,
-				data: [30, 50, 20, 42, 10, 40, 20, 25, 45, 36],
+				data: [30, 50, 20, 42, 10, 40, 20, 25, 45, 36, 30, 50, 20, 42, 10, 40, 20],
+			},
+			{
+				label: '數據6',
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [80, 40, 60, 40, 80, 50, 90, 30, 60, 70, 80, 40, 60, 40, 80, 50, 90],
+			}, {
+				label: '數據7',
+				backgroundColor: color(window.chartColors.orange).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70, 20, 40, 70, 50, 85, 60, 105],
+			}, {
+				label: '數據8',
+				backgroundColor: color(window.chartColors.green).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 60, 62, 90, 40, 95, 25, 30, 30, 30, 50, 60, 62, 90, 40, 95],
+			}, {
+				label: '數據9',
+				backgroundColor: color(window.chartColors.purple).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+
+				data: [20, 40, 50, 50, 10, 60, 40, 35, 35, 20, 20, 40, 50, 50, 10, 60, 40],
+			}, {
+				label: '數據10',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 20, 42, 10, 40, 20, 25, 45, 36, 30, 50, 20, 42, 10, 40, 20],
+			},
+			{
+				label: '數據11',
+				backgroundColor: color(window.chartColors.blue).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [80, 40, 60, 40, 80, 50, 90, 30, 60, 70, 80, 40, 60, 40, 80, 50, 90],
+			}, {
+				label: '數據12',
+				backgroundColor: color(window.chartColors.orange).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+				data: [20, 40, 70, 50, 85, 60, 105, 35, 55, 70, 20, 40, 70, 50, 85, 60, 105],
+			}, {
+				label: '數據13',
+				backgroundColor: color(window.chartColors.green).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 60, 62, 90, 40, 95, 25, 30, 30, 30, 50, 60, 62, 90, 40, 95],
+			}, {
+				label: '數據14',
+				backgroundColor: color(window.chartColors.purple).alpha(0.8).rgbString(),
+				borderWidth: 0,
+
+
+				data: [20, 40, 50, 50, 10, 60, 40, 35, 35, 20, 20, 40, 50, 50, 10, 60, 40],
+			}, {
+				label: '數據15',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.8).rgbString(),
+				borderWidth: 0,
+				data: [30, 50, 20, 42, 10, 40, 20, 25, 45, 36, 30, 50, 20, 42, 10, 40, 20],
 			}]
 
 		};
@@ -470,8 +553,10 @@
 			options: {
 				tooltips: {
 					mode: 'index',
-					intersect: false
+					intersect: false,
+					position: 'nearest',
 				},
+
 				responsive: true,
 				scales: {
 					xAxes: [{
@@ -481,11 +566,18 @@
 						stacked: true,
 						barPercentage: 0.6
 					}]
-				}
+				},
+
 			}
 		});
-	</script>
 
+	</script>
+	<!-- modal -->
+	<script>
+		$(document).ready(function () {
+			$('#modalChangPWD').modal('show');
+		});
+	</script>
 
 </body>
 

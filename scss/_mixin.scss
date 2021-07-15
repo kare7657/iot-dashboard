@@ -317,14 +317,14 @@
     .modal-iot {
         padding: 0;
         .modal-dialog {
-            max-width: 650px;
+            max-width: 500px;
             .modal-content {
                 border-radius: 15px;
                 .modal-header {
                     width: 100%;
                     border-bottom: none;
                     padding: 0 $padding-S;
-                    margin-top: $margin-M;
+                    margin-top: $margin-S;
                     @include mobile-XS() {
                         margin-top: $margin-S;
                     }
@@ -342,16 +342,8 @@
                     width: 100%;
                     margin: auto;
                     margin-bottom: $margin-XS;
-                    padding: 0;
-                    padding: 0 $padding-S;
-                    padding-top: $padding-XS;
+                    padding: $padding-XS;
                     @include mobile-L() {
-                        padding: 0 $padding-XS * 1.5;
-                        padding-top: $padding-XS;
-                        margin-bottom: $margin-S;
-                    }
-                    @include mobile-XS() {
-                        padding: 0 $padding-XS;
                         padding-top: $padding-XXS;
                     }
                     .form-gp {
@@ -394,9 +386,17 @@
                             }
                         }
                     }
+                    .img-gp {
+                        margin: auto;
+                        text-align: center;
+                        p{
+                            margin-top: $margin-XS;
+                            text-align: center;
+                        }
+                    }
                     p,
                     span {
-                        color: $red;
+                        color: $text;
                         margin-left: 3px;
                     }
                 }
