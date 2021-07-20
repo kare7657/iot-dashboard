@@ -546,8 +546,10 @@
 			}]
 
 		};
+
 		var ctx7 = document.getElementById('horizontal-bar5').getContext('2d');
 		window.myBar = new Chart(ctx7, {
+
 			type: 'horizontalBar',
 			data: barChartData,
 			options: {
@@ -555,12 +557,13 @@
 					mode: 'index',
 					intersect: false,
 					position: 'nearest',
+
 				},
 
 				responsive: true,
 				scales: {
 					xAxes: [{
-						stacked: true,
+						stacked: true
 					}],
 					yAxes: [{
 						stacked: true,
@@ -570,6 +573,7 @@
 
 			}
 		});
+
 
 	</script>
 	<!-- modal -->
