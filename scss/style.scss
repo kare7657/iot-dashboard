@@ -120,7 +120,7 @@ body {
                 margin: $margin-XS 0;
                 text-align: center;
                 th {
-                    width:17.5%;
+                    width: 17.5%;
                 }
                 th:first-child {
                     width: 30%;
@@ -492,6 +492,9 @@ body {
                     h4 {
                         margin-bottom: 0;
                         margin-right: $margin-XS;
+                        @include mobile-L {
+                            text-align: center !important;
+                        }
                     }
                 }
                 .right {
@@ -524,6 +527,11 @@ body {
                                 height: 20px;
                             }
                         }
+                    }
+                }
+                .right.w-25 {
+                    @include mobile-L {
+                        width: 100% !important;
                     }
                 }
             }

@@ -2243,6 +2243,12 @@ body .container .card .title-select .left h4 {
   margin-right: 10px;
 }
 
+@media (max-width: 568px) {
+  body .container .card .title-select .left h4 {
+    text-align: center !important;
+  }
+}
+
 body .container .card .title-select .right {
   width: calc(80% - 10px);
   display: -webkit-box;
@@ -2295,6 +2301,12 @@ body .container .card .title-select .right .icon a {
 body .container .card .title-select .right .icon a img {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .right.w-25 {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 568px) {
