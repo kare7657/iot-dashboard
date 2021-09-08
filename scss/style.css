@@ -2210,12 +2210,19 @@ body .container .card .title-select {
   body .container .card .title-select {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
   }
 }
 
 body .container .card .title-select .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 20%;
 }
 
@@ -2235,6 +2242,11 @@ body .container .card .title-select .left {
   body .container .card .title-select .left {
     width: 100%;
     margin-bottom: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -2246,6 +2258,26 @@ body .container .card .title-select .left h4 {
 @media (max-width: 568px) {
   body .container .card .title-select .left h4 {
     text-align: center !important;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .left .icon {
+    width: 100%;
+  }
+}
+
+body .container .card .title-select .left .icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 25px;
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .left .icon img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
   }
 }
 
@@ -2274,12 +2306,21 @@ body .container .card .title-select .right {
 @media (max-width: 568px) {
   body .container .card .title-select .right {
     width: 100%;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
   }
 }
 
 body .container .card .title-select .right select {
   width: calc(80% - 10px);
   margin-bottom: 0;
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .right select {
+    width: 100%;
+  }
 }
 
 body .container .card .title-select .right .icon {
@@ -2294,6 +2335,12 @@ body .container .card .title-select .right .icon {
   margin-left: 10px;
 }
 
+@media (max-width: 568px) {
+  body .container .card .title-select .right .icon {
+    margin: 0;
+  }
+}
+
 body .container .card .title-select .right .icon a {
   padding: 2px 6.66667px;
 }
@@ -2304,8 +2351,21 @@ body .container .card .title-select .right .icon a img {
 }
 
 @media (max-width: 568px) {
+  body .container .card .title-select .right .icon a img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 568px) {
   body .container .card .title-select .right.w-25 {
     width: 100% !important;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .right.ml-5 {
+    margin: 0 !important;
   }
 }
 

@@ -475,9 +475,11 @@ body {
                 margin-bottom: $margin-S;
                 @include mobile-L {
                     flex-wrap: wrap;
-                    justify-content: space-around;
                 }
                 .left {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
                     width: 20%;
                     @include web-L {
                         width: 30%;
@@ -488,12 +490,29 @@ body {
                     @include mobile-L {
                         width: 100%;
                         margin-bottom: $margin-XS;
+                        justify-content: center;
+                        flex-wrap: wrap;
                     }
                     h4 {
                         margin-bottom: 0;
                         margin-right: $margin-XS;
                         @include mobile-L {
                             text-align: center !important;
+                        }
+                    }
+                    .icon{
+                        @include mobile-L{
+                            width: 100%;
+                        }
+                        img {
+                            width: 20px;
+                            height: 20px;
+                            margin-right: $margin-S;
+                            @include mobile-L {
+                                width: 25px;
+                                height: 25px;
+                                margin-right: $margin-XS;
+                            }
                         }
                     }
                 }
@@ -509,10 +528,14 @@ body {
                     }
                     @include mobile-L {
                         width: 100%;
+                        justify-content: flex-start !important;
                     }
                     select {
                         width: calc(80% - 10px);
                         margin-bottom: 0;
+                        @include mobile-L {
+                            width: 100% ;
+                        }
                     }
                     .icon {
                         display: flex;
@@ -520,11 +543,18 @@ body {
                         text-decoration: none;
                         text-align: center;
                         margin-left: $margin-XS;
+                        @include mobile-L{
+                            margin: 0;
+                        }
                         a {
                             padding: 2px $padding-XXS/1.5;
                             img {
                                 width: 20px;
                                 height: 20px;
+                                @include mobile-L{
+                                    width: 25px;
+                                    height: 25px;
+                                }
                             }
                         }
                     }
@@ -532,6 +562,11 @@ body {
                 .right.w-25 {
                     @include mobile-L {
                         width: 100% !important;
+                    }
+                }
+                .right.ml-5{
+                    @include mobile-L{
+                        margin: 0 !important;
                     }
                 }
             }
