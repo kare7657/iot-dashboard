@@ -1100,35 +1100,6 @@ body .navbar .mobile .logo img {
   }
 }
 
-body .back-top {
-  width: 40px;
-  height: 40px;
-  line-height: 37px;
-  z-index: 999;
-  position: fixed;
-  left: 30px;
-  top: 30px;
-  background-color: #2faae5;
-  border-radius: 50%;
-  font-size: 1.125rem;
-  color: white;
-  text-align: center;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-@media (max-width: 568px) {
-  body .back-top {
-    left: unset;
-    top: unset;
-    right: 25px;
-    bottom: 25px;
-    width: 44px;
-    height: 44px;
-    line-height: 40px;
-  }
-}
-
 body .container {
   max-width: 1920px;
   padding: 0;
@@ -2268,9 +2239,9 @@ body .container .card .title-select .left h4 {
 }
 
 body .container .card .title-select .left .icon img {
-  width: 20px;
-  height: 20px;
-  margin-right: 25px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 }
 
 @media (max-width: 568px) {
@@ -2346,8 +2317,8 @@ body .container .card .title-select .right .icon a {
 }
 
 body .container .card .title-select .right .icon a img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 @media (max-width: 568px) {
@@ -2366,6 +2337,26 @@ body .container .card .title-select .right .icon a img {
 @media (max-width: 568px) {
   body .container .card .title-select .right.ml-5 {
     margin: 0 !important;
+  }
+}
+
+body .container .card .title-select .icon .back,
+body .container .card .title-select .icon .next {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .icon .back,
+  body .container .card .title-select .icon .next {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+@media (max-width: 568px) {
+  body .container .card .title-select .icon .back {
+    margin-right: 10px !important;
   }
 }
 

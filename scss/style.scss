@@ -31,9 +31,6 @@ body {
     .navbar {
         @include navbar();
     }
-    .back-top {
-        @include back-top();
-    }
     .container {
         max-width: 1920px;
         padding: 0;
@@ -500,14 +497,14 @@ body {
                             text-align: center !important;
                         }
                     }
-                    .icon{
-                        @include mobile-L{
+                    .icon {
+                        @include mobile-L {
                             width: 100%;
                         }
                         img {
-                            width: 20px;
-                            height: 20px;
-                            margin-right: $margin-S;
+                            width: 25px;
+                            height: 25px;
+                            margin-right: $margin-XS;
                             @include mobile-L {
                                 width: 25px;
                                 height: 25px;
@@ -534,7 +531,7 @@ body {
                         width: calc(80% - 10px);
                         margin-bottom: 0;
                         @include mobile-L {
-                            width: 100% ;
+                            width: 100%;
                         }
                     }
                     .icon {
@@ -543,15 +540,15 @@ body {
                         text-decoration: none;
                         text-align: center;
                         margin-left: $margin-XS;
-                        @include mobile-L{
+                        @include mobile-L {
                             margin: 0;
                         }
                         a {
                             padding: 2px $padding-XXS/1.5;
                             img {
-                                width: 20px;
-                                height: 20px;
-                                @include mobile-L{
+                                width: 25px;
+                                height: 25px;
+                                @include mobile-L {
                                     width: 25px;
                                     height: 25px;
                                 }
@@ -564,9 +561,25 @@ body {
                         width: 100% !important;
                     }
                 }
-                .right.ml-5{
-                    @include mobile-L{
+                .right.ml-5 {
+                    @include mobile-L {
                         margin: 0 !important;
+                    }
+                }
+                .icon {
+                    .back,
+                    .next {
+                        width: 30px !important;
+                        height: 30px !important;
+                        @include mobile-L {
+                            width: 35px !important;
+                            height: 35px !important;
+                        }
+                    }
+                    .back {
+                        @include mobile-L {
+                            margin-right: 10px !important;
+                        }
                     }
                 }
             }
