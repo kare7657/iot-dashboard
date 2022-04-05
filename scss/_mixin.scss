@@ -1048,6 +1048,25 @@
                     }
                 }
             }
+            .submit{
+                width: 100%;
+                height: 40px;
+                background-color: $blue !important;
+                color: $title-W !important;
+                font-size: $size-h4;
+                font-weight: bold;
+                line-height: 40px;
+                border: none;
+                border-radius: 8px;
+                padding: 0;
+                text-decoration: none;
+                margin-top: $margin-XS;
+                margin-bottom: $margin-XS * 1.5;
+                cursor: pointer;
+                &:hover {
+                    background-color: $blue;
+                }
+            }
             textarea {
                 width: 100%;
                 border-radius: 5px;

@@ -1253,6 +1253,27 @@ body .container form .form-gp select[disabled]:hover {
   background-color: #a7e5ff;
 }
 
+body .container form .form-gp .submit {
+  width: 100%;
+  height: 40px;
+  background-color: #2faae5 !important;
+  color: white !important;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 40px;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+body .container form .form-gp .submit:hover {
+  background-color: #2faae5;
+}
+
 body .container form .form-gp textarea {
   width: 100%;
   border-radius: 5px;
