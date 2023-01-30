@@ -397,6 +397,9 @@ body {
                 align-items: center;
                 flex-wrap: wrap;
                 padding: 0;
+                @include web-S {
+                    margin-bottom: $margin-XS;
+                }
                 label {
                     line-height: 1.5;
                     font-weight: bold;
@@ -405,7 +408,7 @@ body {
                     margin: 0;
                     margin-right: $margin-XS;
                     @include web-S {
-                        margin-bottom: $margin-S;
+                        margin-bottom: 16px;
                     }
                     @include mobile-L {
                         margin-bottom: $margin-XS;
@@ -422,9 +425,15 @@ body {
                             margin-right: 0;
                         }
                     }
+                    @include web-L {
+                        width: 10%;
+                    }
                     @include web-S {
-                        width: 35%;
-                        margin-bottom: $margin-S;
+                        width: 23%;
+                        margin-bottom: 16px;
+                    }
+                    @include pad {
+                        width: 19%;
                     }
                     @include mobile-L {
                         width: 100%;
@@ -439,8 +448,15 @@ body {
                     border: solid 1px #ccc;
                     margin: 0;
                     margin-right: $margin-XS;
+                    @include web-L {
+                        width: 10%;
+                    }
                     @include web-S {
-                        width: 35%;
+                        width: 23%;
+                        margin-bottom: 16px;
+                    }
+                    @include pad {
+                        width: 19%;
                     }
                     @include mobile-L {
                         width: 100%;
@@ -456,12 +472,62 @@ body {
                     cursor: pointer;
                     margin-right: $margin-XS;
                     font-size: $size-p;
+                    @include web-S {
+                        padding: $padding-XXS/4 18px;
+                        margin-bottom: 16px;
+                    }
                     @include mobile-L {
                         width: 100%;
                         height: 38px;
                         margin-bottom: $margin-XS * 1.5;
                         margin-right: 0;
                     }
+                }
+            }
+            .custom-switch {
+                margin-bottom: $margin-XS;
+                @include mobile-L {
+                    margin-bottom: $margin-S;
+                    .custom-control-label {
+                        padding-left: 1.25rem;
+                        padding-top: 0.25rem;
+                    }
+
+                    .custom-control-label::before {
+                        height: 1.5rem;
+                        width: calc(2rem + 0.75rem);
+                        border-radius: 3rem;
+                    }
+
+                    .custom-control-label::after {
+                        width: calc(1.5rem - 4px);
+                        height: calc(1.5rem - 4px);
+                        border-radius: calc(2rem - (1.5rem / 2));
+                    }
+
+                    .custom-control-input:checked ~ .custom-control-label::after {
+                        transform: translateX(calc(1.5rem - 0.25rem));
+                    }
+                }
+                label {
+                    line-height: 1.5;
+                    font-weight: bold;
+                    font-size: $size-p;
+                    color: $blue;
+                    margin: 0;
+                    margin-right: $margin-XS;
+                    @include web-S {
+                        margin-bottom: 16px;
+                    }
+                    @include mobile-L {
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        line-height: unset;
+                    }
+                }
+                .custom-control-input:checked ~ .custom-control-label::before {
+                    border-color: $blue;
+                    background-color: $blue;
                 }
             }
             .title-select {
