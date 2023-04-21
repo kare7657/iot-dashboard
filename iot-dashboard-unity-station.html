@@ -80,20 +80,28 @@
 								<th>量測時間</th>
 								<th>量測數據</th>
 								<th>單位</th>
+								<th>關聯圖</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td data-title="項次">01</td>
 								<td data-title="機關名稱">機關名稱</td>
-								<td data-title="監測站">監測站名稱</td>
-								<td data-title="物理量名稱">傳輸訊號強度</td>
+								<td data-title="監測站">
+									<a href="#" data-toggle="modal" data-target="#Modal-1">Modal-1</a>
+								</td>
+								<td data-title="物理量名稱">
+									<a href="#" data-toggle="modal" data-target="#Modal-2">Modal-2</a>
+								</td>
 								<td data-title="完整名稱">NB訊號強度</td>
 								<td data-title="是否啟用"><span class="state-btn true"><i
 											class="fas fa-toggle-on"></i>是</span></td>
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">02</td>
@@ -106,6 +114,9 @@
 								<td data-title="量測時間">-</td>
 								<td data-title="量測數據">-</td>
 								<td data-title="單位">-</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">03</td>
@@ -118,6 +129,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">04</td>
@@ -130,6 +144,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">05</td>
@@ -143,6 +160,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">06</td>
@@ -156,6 +176,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">07</td>
@@ -168,6 +191,9 @@
 								<td data-title="量測時間">-</td>
 								<td data-title="量測數據">-</td>
 								<td data-title="單位">-</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">08</td>
@@ -181,6 +207,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">09</td>
@@ -194,6 +223,9 @@
 								<td data-title="量測時間">2020/03/31 14:30:37</td>
 								<td data-title="量測數據">1234567</td>
 								<td data-title="單位">dBm</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 							<tr>
 								<td data-title="項次">10</td>
@@ -206,6 +238,9 @@
 								<td data-title="量測時間">-</td>
 								<td data-title="量測數據">-</td>
 								<td data-title="單位">-</td>
+								<td data-title="關聯圖">
+									<a href="iot-dashboard-correlation.html">連結</a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -223,6 +258,199 @@
 						</ul>
 					</div>
 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal-1-->
+	<div class="modal fade modal-iot" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-1-Title"
+		data-backdrop="static" style=" padding-top: 0;">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="Modal-1-Title">監測站名稱</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="list">
+						<h4>檢視監測站詮釋資料</h4>
+						<div class="form-gp">
+							<label>監測站名稱<span class="notice">*</span></label>
+							<p>壩體裂縫監測站 (壩頂閘閥室)</p>
+						</div>
+						<div class="form-gp">
+							<label>監測站代號<span class="notice">*</span></label>
+							<p>3132003RE0019</p>
+						</div>
+						<div class="form-gp">
+							<label>建置日期<span class="notice">*</span></label>
+							<p>2021-01-11</p>
+						</div>
+						<div class="form-gp">
+							<label>坐標-經度E<span class="notice">*</span></label>
+							<p>120.78</p>
+						</div>
+						<div class="form-gp">
+							<label>坐標-緯度N<span class="notice">*</span></label>
+							<p>22.13</p>
+						</div>
+						<div class="form-gp">
+							<label>用途說明<span class="notice">*</span></label>
+							<p>壩體裂縫監測</p>
+						</div>
+						<div class="form-gp">
+							<label>管理機關(構)<span class="notice">*</span></label>
+							<p>經濟部水利署</p>
+						</div>
+						<div class="form-gp">
+							<label>單位/部門</label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>地址</label>
+							<p>牡丹水庫閘閥室</p>
+						</div>
+						<div class="form-gp">
+							<label>定位方式<span class="notice">*</span></label>
+							<p>固定式</p>
+						</div>
+						<div class="form-gp">
+							<label>地理特徵<span class="notice">*</span></label>
+							<p>牡丹水庫</p>
+						</div>
+						<div class="form-gp">
+							<label>自訂項目</label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>上傳檔案</label>
+							<p>使用符合本署「水資源資料交換標準」規定之XML文件記錄</p>
+						</div>
+					</div>
+					<table class="mb-separate">
+						<h4>物理量資訊</h4>
+						<thead>
+							<tr>
+								<th>物理量名稱</th>
+								<th>完整名稱</th>
+								<th>單位</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-title="物理量名稱">伸張量</td>
+								<td data-title="完整名稱">壩體監測站 (MCU9-壩頂裂縫)裂縫寬度</td>
+								<td data-title="單位">mm</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="list">
+						<h4>監測站群組</h4>
+						<div class="form-gp">
+							<label>監測站群組名稱</label>
+							<p>牡丹監測站</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal-2-->
+	<div class="modal fade modal-iot" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-2-Title"
+		data-backdrop="static" style=" padding-top: 0;">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="Modal-2-Title">物理量名稱</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="list">
+						<h4>檢視物理量詮釋資料</h4>
+						<div class="form-gp">
+							<label>物理量分類<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>物理量名稱<span class="notice">*</span></label>
+							<p>視訊監測影格照片 (單位：無)</p>
+						</div>
+						<div class="form-gp">
+							<label>完整名稱<span class="notice">*</span></label>
+							<p>廍後第二中排水門內水監視</p>
+						</div>
+						<div class="form-gp">
+							<label>用途說明<span class="notice">*</span></label>
+							<p>監視設備</p>
+						</div>
+						<div class="form-gp">
+							<label>所屬設備<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>統計方法<span class="notice">*</span></label>
+							<p>平均</p>
+						</div>
+						<div class="form-gp">
+							<label>自動檢核類型<span class="notice">*</span></label>
+							<p>1.啟用資料自動檢核</p>
+						</div>
+						<div class="form-gp">
+							<label>物理量範圍最大值<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>物理量範圍最小值<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>顯示位數<span class="notice">*</span></label>
+							<p>無小數點</p>
+						</div>
+						<div class="form-gp">
+							<label>取樣週期</label>
+							<p>600</p>
+						</div>
+						<div class="form-gp">
+							<label>量測週期 (資料間距)<span class="notice">*</span></label>
+							<p>600 (單位：秒) [預設值：600sec (10min)]</p>
+						</div>
+						<div class="form-gp">
+							<label>上傳週期<span class="notice">*</span></label>
+							<p>600</p>
+						</div>
+						<div class="form-gp">
+							<label>量測區域</label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>基準高程</label>
+							<p></p>
+						</div>
+					</div>
+					<table>
+						<h4>視訊監測影格照片設定</h4>
+						<thead>
+							<tr>
+								<th>影像類別</th>
+								<th>影像子類別</th>
+								<th>串流影像連結</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td> <a href="#">ksdifkdglkfdjhpogfkhlkihudcjshbdufsghfisdhflksdjflj</a></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

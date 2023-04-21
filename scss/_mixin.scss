@@ -117,6 +117,10 @@
     h6 {
         font-weight: bold;
     }
+    .notice {
+        color: $red;
+        margin: 0 2px;
+    }
     hr {
         border-top: 1px solid $light-sky;
         margin: 0;
@@ -313,63 +317,94 @@
         }
     }
 
-    //modal-iot
+    //modal
     .modal-iot {
         padding: 0;
         .modal-dialog {
-            max-width: 500px;
             .modal-content {
                 border-radius: 15px;
                 .modal-header {
                     width: 100%;
-                    border-bottom: none;
-                    padding: 0 $padding-S;
-                    margin-top: $margin-S;
+                    padding: 16px 0;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
                     @include mobile-XS() {
                         margin-top: $margin-S;
                     }
                     .modal-title {
                         width: 100%;
                         text-align: center;
+                        color: black;
                     }
                     .close {
                         position: absolute;
-                        right: 2.5%;
-                        margin: -1rem -1rem -1rem 0;
+                        top: 16px;
+                        right: 16px;
+                        &:hover {
+                            background-color: unset;
+                        }
                     }
                 }
                 .modal-body {
                     width: 100%;
                     margin: auto;
-                    margin-bottom: $margin-XS;
                     padding: $padding-XS;
                     @include mobile-L() {
-                        padding-top: $padding-XXS;
+                        padding: 16px;
+                    }
+                    .img-gp {
+                        text-align: center;
+                        img {
+                            width: 250px;
+                            height: 100%;
+                            object-fit: contain;
+                            text-align: center;
+                            margin-bottom: $margin-XS;
+                            @include mobile-L() {
+                                text-align: center;
+                            }
+                        }
+                        p {
+                            text-align: center;
+                        }
+                    }
+                    h4 {
+                        margin: $margin-XS 0;
+                    }
+                    .list,
+                    table {
+                        margin-bottom: $margin-S;
                     }
                     .form-gp {
                         width: 100%;
                         display: flex;
                         justify-content: space-between;
                         flex-wrap: wrap;
-                        margin-bottom: $margin-S;
+                        padding: 4px 10px;
                         @include mobile-L() {
                             flex-wrap: wrap;
-                            margin-bottom: $margin-XS;
+                        }
+                        &:nth-child(even) {
+                            background-color: rgba($color: $light-sky, $alpha: 0.1);
                         }
                         label {
-                            width: 40%;
-                            font-size: $size-h4;
-                            line-height: $size-h4 * 1.5;
+                            width: 30%;
+                            font-size: $size-p;
+                            line-height: 2;
                             font-weight: bold;
-                            color: $text;
-                            margin: $margin-XS 0;
+                            color: black;
+                            margin: 0;
                             @include mobile-L() {
                                 width: 100%;
                             }
                         }
                         input,
-                        select {
-                            width: 60%;
+                        select,
+                        p {
+                            width: 70%;
+                            text-align: left;
+                            margin-bottom: 0;
                             @include mobile-L() {
                                 width: 100%;
                             }
@@ -379,104 +414,102 @@
                             display: flex;
                             justify-content: flex-end;
                             font-size: $size-p;
-                            p,
-                            span {
-                                color: $red;
+                            p {
+                                padding-top: 0;
                                 text-align: right;
+                                font-weight: normal;
                             }
                         }
                     }
-                    .img-gp {
-                        margin: auto;
-                        text-align: center;
-                        p {
-                            margin-top: $margin-XS;
-                            text-align: center;
+                    //圖片驗證碼
+                    .code-gp {
+                        width: 100%;
+                        padding: 0;
+                        display: flex;
+                        margin-bottom: $margin-XS;
+                        flex-wrap: wrap;
+                        margin-bottom: $margin-S;
+                        @include web-S {
+                            justify-content: start;
+                        }
+                        label {
+                            width: 40%;
+                            text-align: left;
+                            @include mobile-L() {
+                                width: 30%;
+                            }
+                        }
+                        .text-gp {
+                            width: 50%;
+                            display: flex;
+                            align-items: center;
+                            @include mobile-L() {
+                                width: 100%;
+                                justify-content: start;
+                                flex-wrap: wrap;
+                            }
+                            .code {
+                                width: 60%;
+                                margin-right: 10px;
+                                @include mobile-L() {
+                                    width: 100%;
+                                    justify-content: space-between;
+                                    margin-bottom: 15px;
+                                }
+                                @include mobile-XS() {
+                                    margin-right: 0;
+                                }
+                            }
+                            .RP {
+                                height: 25px;
+                                margin: 0;
+                                margin-right: 10px;
+                                @include web-L {
+                                    width: auto;
+                                    max-height: unset;
+                                    height: 30px;
+                                }
+                                @include mobile-L() {
+                                    height: 35px;
+                                    margin-left: 0;
+                                }
+                                @include mobile-XS() {
+                                    height: 30px;
+                                }
+                            }
+                            .reform {
+                                height: 20px;
+                                width: 20px;
+                                margin: 0;
+                            }
                         }
                     }
-                    p,
-                    span {
-                        color: $text;
-                        margin-left: 3px;
+                    h6 {
+                        margin-bottom: $margin-XS;
+                    }
+                    p {
+                        margin-bottom: $margin-S;
+                        &.notice {
+                            text-align: right;
+                        }
                     }
                 }
                 .modal-footer {
                     border-top: none;
                     margin-bottom: $margin-M;
-                    padding: 0;
-                    padding: 0 $padding-S;
+                    padding: 0 $padding-L;
+                    text-align: center;
+                    width: 100%;
                     @include mobile-L() {
-                        padding: 0 $padding-XS * 1.5;
-                    }
-                    @include mobile-XS() {
-                        padding: 0 $padding-XS;
-                        margin-bottom: $margin-S;
-                    }
-                    .btn {
-                        margin-top: $margin-XS;
+                        padding: 0 $padding-M;
                         display: flex;
-                        justify-content: center;
-                        padding: 0;
-                        @include mobile-L() {
+                        flex-direction: column;
+                        button {
                             width: 100%;
-                            flex-wrap: wrap;
-                            flex-direction: column;
-                            button {
-                                margin: 0;
+                            margin: 0;
+                            &:not(:first-child) {
                                 margin-top: $margin-S;
                             }
-                        }
-                    }
-                    .g-recaptcha {
-                        width: 100%;
-                        margin-top: $margin-XS;
-                    }
-                }
-                .btn-iot {
-                    margin: 0;
-                    margin-left: $margin-S;
-                    @include mobile-L() {
-                        width: 100%;
-                        margin: unset;
-                        margin-bottom: $margin-S;
-                    }
-                    &[type="submit"],
-                    &[type="reset"] {
-                        height: 40px;
-                        background-color: $dark-blue;
-                        color: $title-W;
-                        font-size: $size-h4;
-                        font-weight: bold;
-                        border: none;
-                        border-radius: 8px;
-                        padding: 5px $padding-XS;
-                        text-decoration: none;
-                        text-align: center;
-                        &:hover {
-                            background-color: $blue;
-                        }
-                    }
-                    &[type="button"] {
-                        height: 40px;
-                        background-color: transparent;
-                        border: solid 1px $dark-blue;
-                        border-radius: 8px;
-                        color: $dark-blue;
-                        font-size: $size-h4;
-                        font-weight: bold;
-                        padding: 5px $padding-XS;
-                        text-decoration: none;
-                        text-align: center;
-                        &:hover {
-                            background-color: $blue;
-                            color: $title-W;
-                            border: solid 1px $blue;
-                        }
-                    }
-                    &[disabled] {
-                        background-color: $light-sky;
-                        &:hover {
-                            background-color: $light-sky;
                         }
                     }
                 }
@@ -882,12 +915,12 @@
                 }
             }
             .btn {
-                margin: 0 $margin-XS/2;
+                margin: 0 $margin-XS;
                 @include pad {
-                    margin: $margin-XS/2 $margin-XS/1.5;
+                    margin: $margin-XS $margin-XS;
                 }
                 @include mobile-L {
-                    margin: $margin-XS/2 $margin-XS/1.5 $margin-XS/2 0 !important;
+                    margin: $margin-XS $margin-XS $margin-XS/2 0 !important;
                 }
             }
             .btn-primary {
@@ -899,7 +932,7 @@
             text-align: left;
             i {
                 font-size: $size-p;
-                margin-right: $margin-XS/1.5;
+                margin-right: $margin-XS;
             }
         }
         .true {
@@ -1048,7 +1081,7 @@
                     }
                 }
             }
-            .submit{
+            .submit {
                 width: 100%;
                 height: 40px;
                 background-color: $blue !important;
