@@ -579,15 +579,15 @@ body table {
 body table table,
 body table th,
 body table td {
-  border: 1px solid #a7e5ff;
+  border: 1px solid white;
   padding: 5px 10px;
   text-align: center;
 }
 body table tr:nth-child(even) {
-  background-color: rgba(167, 229, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 body table tr th {
-  background-color: rgba(167, 229, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 body table tr td {
@@ -646,7 +646,7 @@ body table .false {
   }
 }
 body .mb-separate tr th {
-  background-color: rgba(167, 229, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 @media (max-width: 568px) {
@@ -665,7 +665,7 @@ body .mb-separate tr th {
     color: black;
   }
   body .mb-separate tr td:nth-child(odd) {
-    background-color: rgba(167, 229, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 @media (max-width: 320px) {
@@ -1985,6 +1985,12 @@ body .container .correlation-img img {
     max-width: 1000px;
   }
 }
+@media (max-width: 1024px) {
+  body .container .correlation-img img {
+    max-width: unset;
+    padding: 0 10px;
+  }
+}
 body .container .color-gp {
   display: flex;
   flex-wrap: wrap;
@@ -2030,24 +2036,17 @@ body .container .color-gp .block .block-body {
   flex-direction: column;
   height: 100%;
 }
+body .container .color-gp .block .block-body p {
+  line-height: 1.75;
+}
 body .container .color-gp .block .block-body ul {
   padding: 0;
   color: #595757;
+  line-height: 1.75;
 }
 body .container .color-gp .block .block-body ul li {
   list-style-position: inside;
-}
-body .container .color-gp .block .block-body table,
-body .container .color-gp .block .block-body th,
-body .container .color-gp .block .block-body td {
-  border: solid 1px white;
-  color: #595757;
-}
-body .container .color-gp .block .block-body tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-body .container .color-gp .block .block-body tr th {
-  background-color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
 }
 body .container .color-gp .block:nth-child(1) .block-header {
   background-color: #6fcda6;

@@ -664,6 +664,10 @@ body {
                 @include web-XL {
                     max-width: 1000px;
                 }
+                @include web-S {
+                    max-width: unset;
+                    padding: 0 $padding-XXS;
+                }
             }
         }
         .color-gp {
@@ -701,25 +705,16 @@ body {
                     align-items: stretch;
                     flex-direction: column;
                     height: 100%;
+                    p {
+                        line-height: 1.75;
+                    }
                     ul {
                         padding: 0;
                         color: $text;
+                        line-height: 1.75;
                         li {
                             list-style-position: inside;
-                        }
-                    }
-                    table,
-                    th,
-                    td {
-                        border: solid 1px white;
-                        color: $text;
-                    }
-                    tr {
-                        &:nth-child(even) {
-                            background-color: rgba($color: white, $alpha: 0.4);
-                        }
-                        th {
-                            background-color: rgba($color: white, $alpha: 0.8);
+                            line-height: 1.75;
                         }
                     }
                 }

@@ -895,16 +895,16 @@
         table,
         th,
         td {
-            border: 1px solid $light-sky;
+            border: 1px solid white;
             padding: $padding-XXS/2 $padding-XXS;
             text-align: center;
         }
         tr {
             &:nth-child(even) {
-                background-color: rgba($color: $light-sky, $alpha: 0.1);
+                background-color: rgba($color: white, $alpha: 0.5);
             }
             th {
-                background-color: rgba($color: $light-sky, $alpha: 0.5);
+                background-color: rgba($color: white, $alpha: 0.8);
                 text-align: center;
             }
             td {
@@ -959,7 +959,7 @@
                 }
             }
             th {
-                background-color: rgba($color: $light-sky, $alpha: 0.5);
+                background-color: rgba($color: white, $alpha: 0.5);
                 text-align: center;
             }
             td {
@@ -977,7 +977,7 @@
                         color: $title-BK;
                     }
                     &:nth-child(odd) {
-                        background-color: rgba($color: $light-sky, $alpha: 0.1);
+                        background-color: rgba($color: white, $alpha: 0.5);
                     }
                 }
             }
@@ -990,7 +990,6 @@
         border-radius: unset;
     }
     form {
-        // padding: $padding-XS $padding-XS;
         @include web-S() {
             padding: $padding-XS $padding-L * 1.5;
         }
