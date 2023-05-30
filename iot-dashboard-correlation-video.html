@@ -13,7 +13,7 @@
 
 <body>
 	<div class="container">
-		<div class="card col-12">
+		<!-- <div class="card col-12">
 			<div class="title-select  mb-0">
 				<div class="right w-100 justify-content-start">
 					<div class="icon">
@@ -28,7 +28,7 @@
 					<img src="img/correlation-video.png" alt="物理量 (非模擬預測資料) 關聯圖">
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="card col-12">
 			<h2 class="w-100 text-center mt-3">五股區民義路一段172 巷橋 CCTV 影像</h2>
 			<div class="color-gp">
@@ -40,12 +40,14 @@
 						<p>量測週期 (秒)：60</p>
 						<p>上傳週期 (秒)：60</p>
 						<p>所屬機關 (構)：新北市政府水利局 (智慧防汛)</p>
-						<p>所屬設備：<a href="">1231ed60-d9dd-48c0-a90d-07532cc03ec7</a></p>
-						<p>所屬監測站：<a href="">0500261c c872 4905 8a48 f66233f22d95</a></p>
+						<p>所屬設備：<a href="#" data-toggle="modal"
+								data-target="#Modal-1">1231ed60-d9dd-48c0-a90d-07532cc03ec7</a></p>
+						<p>所屬監測站：<a href="#" data-toggle="modal" data-target="#Modal-2">0500261c c872 4905 8a48
+								f66233f22d95</a></p>
 						<p>防災中心補助建置之攝影機：否</p>
 						<p>大項類別：補助縣市站</p>
 						<p>小項類別：淹水感測器監測站</p>
-						<p>串流影像連接：<a href="">https://wavegis nvr.wavegis.com.tw/cgi bin/live.cgi?cam=50</a></p>
+						<p>串流影像連接：<a href="#">https://wavegis nvr.wavegis.com.tw/cgi bin/live.cgi?cam=50</a></p>
 					</div>
 				</div>
 				<div class="block">
@@ -112,14 +114,303 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- jQuery Knob -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.knob.min.js"></script>
-	<!-- bootstrap -->
-	<script src="js/bootstrap.min.4.2.js"></script>
-	<script src="js/popper.min.js"></script>
+		<!-- Modal-1-->
+		<div class="modal fade modal-iot" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-1-Title"
+			data-backdrop="static" style=" padding-top: 0;">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="Modal-1-Title">監測站名稱</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="list">
+							<h4>檢視監測站詮釋資料</h4>
+							<div class="form-gp">
+								<label>監測站名稱<span class="notice">*</span></label>
+								<p>壩體裂縫監測站 (壩頂閘閥室)</p>
+							</div>
+							<div class="form-gp">
+								<label>監測站代號<span class="notice">*</span></label>
+								<p>3132003RE0019</p>
+							</div>
+							<div class="form-gp">
+								<label>建置日期<span class="notice">*</span></label>
+								<p>2021-01-11</p>
+							</div>
+							<div class="form-gp">
+								<label>坐標-經度E<span class="notice">*</span></label>
+								<p>120.78</p>
+							</div>
+							<div class="form-gp">
+								<label>坐標-緯度N<span class="notice">*</span></label>
+								<p>22.13</p>
+							</div>
+							<div class="form-gp">
+								<label>用途說明<span class="notice">*</span></label>
+								<p>壩體裂縫監測</p>
+							</div>
+							<div class="form-gp">
+								<label>管理機關(構)<span class="notice">*</span></label>
+								<p>經濟部水利署</p>
+							</div>
+							<div class="form-gp">
+								<label>單位/部門</label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>地址</label>
+								<p>牡丹水庫閘閥室</p>
+							</div>
+							<div class="form-gp">
+								<label>定位方式<span class="notice">*</span></label>
+								<p>固定式</p>
+							</div>
+							<div class="form-gp">
+								<label>地理特徵<span class="notice">*</span></label>
+								<p>牡丹水庫</p>
+							</div>
+							<div class="form-gp">
+								<label>自訂項目</label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>上傳檔案</label>
+								<p>使用符合本署「水資源資料交換標準」規定之XML文件記錄</p>
+							</div>
+						</div>
+						<table class="mb-separate">
+							<h4>物理量資訊</h4>
+							<thead>
+								<tr>
+									<th>物理量名稱</th>
+									<th>完整名稱</th>
+									<th>單位</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td data-title="物理量名稱">伸張量</td>
+									<td data-title="完整名稱">壩體監測站 (MCU9-壩頂裂縫)裂縫寬度</td>
+									<td data-title="單位">mm</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="list">
+							<h4>監測站群組</h4>
+							<div class="form-gp">
+								<label>監測站群組名稱</label>
+								<p>牡丹監測站</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal-2-->
+		<div class="modal fade modal-iot" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-2-Title"
+			data-backdrop="static" style=" padding-top: 0;">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="Modal-2-Title">物理量名稱</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="list">
+							<h4>檢視物理量詮釋資料</h4>
+							<div class="form-gp">
+								<label>物理量分類<span class="notice">*</span></label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>物理量名稱<span class="notice">*</span></label>
+								<p>視訊監測影格照片 (單位：無)</p>
+							</div>
+							<div class="form-gp">
+								<label>完整名稱<span class="notice">*</span></label>
+								<p>廍後第二中排水門內水監視</p>
+							</div>
+							<div class="form-gp">
+								<label>用途說明<span class="notice">*</span></label>
+								<p>監視設備</p>
+							</div>
+							<div class="form-gp">
+								<label>所屬設備<span class="notice">*</span></label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>統計方法<span class="notice">*</span></label>
+								<p>平均</p>
+							</div>
+							<div class="form-gp">
+								<label>自動檢核類型<span class="notice">*</span></label>
+								<p>1.啟用資料自動檢核</p>
+							</div>
+							<div class="form-gp">
+								<label>物理量範圍最大值<span class="notice">*</span></label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>物理量範圍最小值<span class="notice">*</span></label>
+								<p></p>
+							</div>
+							<div class="form-gp">
+								<label>顯示位數<span class="notice">*</span></label>
+								<p>無小數點</p>
+							</div>
+							<div class="form-gp">
+								<label>取樣週期</label>
+								<p>600</p>
+							</div>
+							<div class="form-gp">
+								<label>量測週期 (資料間距)<span class="notice">*</span></label>
+								<p>600 (單位：秒) [預設值：600sec (10min)]</p>
+							</div>
+							<div class="form-gp">
+								<label>上傳週期<span class="notice">*</span></label>
+								<p>600</p>
+							</div>
+							<div class="form-gp">
+								<label>量測區域</label>
+								<p></p><!-- Modal-2-->
+	<div class="modal fade modal-iot" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-2-Title"
+		data-backdrop="static" style=" padding-top: 0;">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="Modal-2-Title">物理量名稱</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="list">
+						<h4>檢視物理量詮釋資料</h4>
+						<div class="form-gp">
+							<label>物理量分類<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>物理量名稱<span class="notice">*</span></label>
+							<p>視訊監測影格照片 (單位：無)</p>
+						</div>
+						<div class="form-gp">
+							<label>完整名稱<span class="notice">*</span></label>
+							<p>廍後第二中排水門內水監視</p>
+						</div>
+						<div class="form-gp">
+							<label>用途說明<span class="notice">*</span></label>
+							<p>監視設備</p>
+						</div>
+						<div class="form-gp">
+							<label>所屬設備<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>統計方法<span class="notice">*</span></label>
+							<p>平均</p>
+						</div>
+						<div class="form-gp">
+							<label>自動檢核類型<span class="notice">*</span></label>
+							<p>1.啟用資料自動檢核</p>
+						</div>
+						<div class="form-gp">
+							<label>物理量範圍最大值<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>物理量範圍最小值<span class="notice">*</span></label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>顯示位數<span class="notice">*</span></label>
+							<p>無小數點</p>
+						</div>
+						<div class="form-gp">
+							<label>取樣週期</label>
+							<p>600</p>
+						</div>
+						<div class="form-gp">
+							<label>量測週期 (資料間距)<span class="notice">*</span></label>
+							<p>600 (單位：秒) [預設值：600sec (10min)]</p>
+						</div>
+						<div class="form-gp">
+							<label>上傳週期<span class="notice">*</span></label>
+							<p>600</p>
+						</div>
+						<div class="form-gp">
+							<label>量測區域</label>
+							<p></p>
+						</div>
+						<div class="form-gp">
+							<label>基準高程</label>
+							<p></p>
+						</div>
+					</div>
+					<table class="mb-separate">
+						<h4>視訊監測影格照片設定</h4>
+						<thead>
+							<tr>
+								<th>影像類別</th>
+								<th>影像子類別</th>
+								<th>串流影像連結</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-title=""></td>
+								<td data-title=""></td>
+								<td data-title=""> <a href="#">ksdifkdglkfdjhpogfkhlkihudcjshbdufsghfisdhflksdjflj</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+							</div>
+							<div class="form-gp">
+								<label>基準高程</label>
+								<p></p>
+							</div>
+						</div>
+						<table class="mb-separate">
+							<h4>視訊監測影格照片設定</h4>
+							<thead>
+								<tr>
+									<th>影像類別</th>
+									<th>影像子類別</th>
+									<th>串流影像連結</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td data-title=""></td>
+									<td data-title=""></td>
+									<td data-title=""> <a
+											href="#">ksdifkdglkfdjhpogfkhlkihudcjshbdufsghfisdhflksdjflj</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- jQuery Knob -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.knob.min.js"></script>
+		<!-- bootstrap -->
+		<script src="js/bootstrap.min.4.2.js"></script>
+		<script src="js/popper.min.js"></script>
 </body>
 
 </html>

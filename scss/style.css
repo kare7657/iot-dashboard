@@ -579,15 +579,15 @@ body table {
 body table table,
 body table th,
 body table td {
-  border: 1px solid white;
+  border: 1px solid #a7e5ff;
   padding: 5px 10px;
   text-align: center;
 }
 body table tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(167, 229, 255, 0.1);
 }
 body table tr th {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(167, 229, 255, 0.4);
   text-align: center;
 }
 body table tr td {
@@ -646,7 +646,7 @@ body table .false {
   }
 }
 body .mb-separate tr th {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(167, 229, 255, 0.4);
   text-align: center;
 }
 @media (max-width: 568px) {
@@ -665,7 +665,7 @@ body .mb-separate tr th {
     color: black;
   }
   body .mb-separate tr td:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(167, 229, 255, 0.1);
   }
 }
 @media (max-width: 320px) {
@@ -2077,6 +2077,17 @@ body .container .color-gp .block:nth-child(4) .block-body {
   body .container .color-gp .block:nth-child(4) .block-body {
     padding: 16px;
   }
+}
+body .container .color-gp .block table,
+body .container .color-gp .block th,
+body .container .color-gp .block td {
+  border: 2px solid white;
+}
+body .container .color-gp .block tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+body .container .color-gp .block tr th {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 @media (max-width: 568px) {
   body .container.index {

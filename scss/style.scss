@@ -754,6 +754,19 @@ body {
                         }
                     }
                 }
+                table,
+                th,
+                td {
+                    border: 2px solid white;
+                }
+                tr {
+                    &:nth-child(even) {
+                        background-color: rgba($color: white, $alpha: 0.5);
+                    }
+                    th {
+                        background-color: rgba($color: white, $alpha: 0.8);
+                    }
+                }
             }
         }
     }
